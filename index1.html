@@ -1,0 +1,1747 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FM&T — Forensic Medicine & Toxicology | MBBS Premium Notes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#05050f;--bg2:#0a0a1a;--bg3:#0e0e22;--surface:rgba(255,255,255,0.04);
+  --border:rgba(255,255,255,0.08);--border2:rgba(255,255,255,0.14);
+  --gold:#c8a96e;--gold2:#e8c98e;--gold-dim:rgba(200,169,110,0.15);
+  --cyan:#38bdf8;--cyan-dim:rgba(56,189,248,0.12);
+  --red:#ef4444;--red-dim:rgba(239,68,68,0.12);
+  --green:#10b981;--green-dim:rgba(16,185,129,0.12);
+  --purple:#a78bfa;--purple-dim:rgba(167,139,250,0.12);
+  --amber:#f59e0b;--amber-dim:rgba(245,158,11,0.12);
+  --txt:#e8e8f0;--txt2:#9898b8;--txt3:#6060a0;
+  --nav-h:64px;--r:12px;--r-sm:8px;
+  --font:'Plus Jakarta Sans',system-ui,sans-serif;
+  --font-display:'Playfair Display',Georgia,serif;
+  --font-mono:'JetBrains Mono',monospace;
+  --shadow:0 0 40px rgba(200,169,110,0.06);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;font-size:16px}
+body{background:var(--bg);color:var(--txt);font-family:var(--font);line-height:1.7;overflow-x:hidden}
+body::before{content:'';position:fixed;top:0;left:0;right:0;bottom:0;background:radial-gradient(ellipse 80% 50% at 50% -20%,rgba(200,169,110,0.06),transparent),radial-gradient(ellipse 60% 40% at 80% 80%,rgba(56,189,248,0.04),transparent);pointer-events:none;z-index:0}
+/* ── NAV ── */
+#nav{position:fixed;top:0;left:0;right:0;z-index:999;background:rgba(5,5,15,0.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);height:var(--nav-h);transition:all .3s}
+.nav-inner{max-width:1400px;margin:0 auto;padding:0 24px;height:100%;display:flex;align-items:center;gap:16px}
+.nav-logo{font-family:var(--font-display);font-size:18px;color:var(--gold);white-space:nowrap;flex-shrink:0;font-weight:700}
+.nav-logo span{color:var(--txt2);font-family:var(--font);font-size:12px;font-weight:400;display:block;margin-top:-2px}
+.nav-links{display:flex;gap:4px;overflow-x:auto;flex:1;scrollbar-width:none}
+.nav-links::-webkit-scrollbar{display:none}
+.nav-links a{white-space:nowrap;font-size:12px;font-weight:500;color:var(--txt2);text-decoration:none;padding:6px 10px;border-radius:6px;transition:all .2s;flex-shrink:0}
+.nav-links a:hover,.nav-links a.active{color:var(--gold);background:var(--gold-dim)}
+.nav-controls{display:flex;gap:8px;flex-shrink:0}
+.btn{border:1px solid var(--border2);background:var(--surface);color:var(--txt);font:500 12px var(--font);padding:7px 14px;border-radius:var(--r-sm);cursor:pointer;transition:all .2s;white-space:nowrap}
+.btn:hover{border-color:var(--gold);color:var(--gold);background:var(--gold-dim)}
+.btn.active{background:var(--gold-dim);border-color:var(--gold);color:var(--gold)}
+/* ── SEARCH ── */
+#search-bar{position:fixed;top:var(--nav-h);left:0;right:0;z-index:998;background:rgba(5,5,15,0.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:10px 24px;display:none;transition:all .3s}
+#search-bar.open{display:flex;gap:12px;align-items:center}
+#search-input{flex:1;background:rgba(255,255,255,0.05);border:1px solid var(--border2);color:var(--txt);font:500 14px var(--font);padding:10px 16px;border-radius:var(--r-sm);outline:none;max-width:600px}
+#search-input:focus{border-color:var(--gold)}
+#search-count{font-size:12px;color:var(--txt2);min-width:80px}
+/* ── LAYOUT ── */
+main{max-width:1200px;margin:0 auto;padding:calc(var(--nav-h) + 40px) 24px 80px}
+/* ── HERO ── */
+#hero{min-height:90vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:60px 24px;position:relative;z-index:1}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:var(--gold-dim);border:1px solid rgba(200,169,110,0.3);color:var(--gold);font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:6px 16px;border-radius:100px;margin-bottom:32px}
+.hero-badge::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--gold);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.8)}}
+.hero-title{font-family:var(--font-display);font-size:clamp(42px,8vw,88px);font-weight:700;line-height:1.05;margin-bottom:16px;background:linear-gradient(135deg,#fff 0%,#e8d5a8 40%,var(--gold) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-sub{font-size:clamp(16px,2.5vw,20px);color:var(--txt2);max-width:600px;margin:0 auto 12px;font-weight:300}
+.hero-meta{font-size:13px;color:var(--txt3);margin-bottom:48px}
+.hero-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:16px;width:100%;max-width:800px;margin:0 auto 48px}
+.stat-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:20px 16px;text-align:center;transition:all .3s}
+.stat-card:hover{border-color:var(--gold-dim);transform:translateY(-2px)}
+.stat-num{font-family:var(--font-display);font-size:28px;font-weight:700;color:var(--gold);line-height:1}
+.stat-lbl{font-size:11px;color:var(--txt2);margin-top:6px;font-weight:500;letter-spacing:.04em}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+.btn-primary{background:linear-gradient(135deg,var(--gold),#a8823e);border:none;color:#0a0510;font:700 14px var(--font);padding:14px 32px;border-radius:var(--r-sm);cursor:pointer;transition:all .3s;text-decoration:none}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(200,169,110,0.3)}
+.btn-ghost{background:transparent;border:1px solid var(--border2);color:var(--txt);font:500 14px var(--font);padding:13px 28px;border-radius:var(--r-sm);cursor:pointer;transition:all .2s;text-decoration:none}
+.btn-ghost:hover{border-color:var(--cyan);color:var(--cyan)}
+
+.hero-credit{
+  margin-top:20px;
+  font-size:13px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--gold);
+  opacity:.78;
+  font-weight:600;
+}
+
+/* ── RESOURCE TIERS ── */
+#roadmap{position:relative;z-index:1;margin-bottom:60px}
+.section-header{display:flex;align-items:center;gap:16px;margin-bottom:32px}
+.section-label{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);padding:4px 12px;background:var(--gold-dim);border-radius:100px}
+.section-title{font-family:var(--font-display);font-size:clamp(24px,4vw,36px);font-weight:700;color:var(--txt)}
+.tier-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.tier-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:24px;position:relative;overflow:hidden}
+.tier-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px}
+.tier-gold::before{background:linear-gradient(90deg,var(--gold),transparent)}
+.tier-cyan::before{background:linear-gradient(90deg,var(--cyan),transparent)}
+.tier-green::before{background:linear-gradient(90deg,var(--green),transparent)}
+.tier-purple::before{background:linear-gradient(90deg,var(--purple),transparent)}
+.tier-icon{font-size:24px;margin-bottom:12px}
+.tier-name{font-weight:700;font-size:15px;margin-bottom:6px}
+.tier-name.gold{color:var(--gold)}
+.tier-name.cyan{color:var(--cyan)}
+.tier-name.green{color:var(--green)}
+.tier-name.purple{color:var(--purple)}
+.tier-desc{font-size:13px;color:var(--txt2);line-height:1.6}
+/* ── PROGRESS TRACKER ── */
+#progress-panel{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:24px;margin-bottom:40px;position:relative;z-index:1}
+.progress-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+.progress-title{font-weight:600;font-size:15px}
+.progress-pct{font-family:var(--font-display);font-size:24px;font-weight:700;color:var(--gold)}
+.progress-bar-wrap{background:rgba(255,255,255,0.06);border-radius:100px;height:8px;overflow:hidden;margin-bottom:16px}
+.progress-bar-fill{height:100%;background:linear-gradient(90deg,var(--gold),var(--cyan));border-radius:100px;transition:width .5s ease}
+.unit-pills{display:flex;flex-wrap:wrap;gap:8px}
+.unit-pill{font-size:11px;font-weight:600;padding:5px 12px;border-radius:100px;border:1px solid var(--border);cursor:pointer;transition:all .2s;user-select:none;color:var(--txt2)}
+.unit-pill:hover{border-color:var(--gold);color:var(--gold)}
+.unit-pill.done{background:var(--green-dim);border-color:var(--green);color:var(--green)}
+/* ── SECTION WRAPPER ── */
+.study-section{position:relative;z-index:1;margin-bottom:32px}
+.section-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;transition:all .3s}
+.section-card:hover{border-color:var(--border2)}
+.section-card.highlight{box-shadow:0 0 0 2px var(--gold),var(--shadow)}
+.sec-head{display:flex;align-items:center;gap:16px;padding:20px 24px;cursor:pointer;user-select:none;transition:background .2s}
+.sec-head:hover{background:rgba(255,255,255,0.03)}
+.unit-badge{background:linear-gradient(135deg,var(--gold-dim),var(--gold-dim));border:1px solid rgba(200,169,110,0.3);color:var(--gold);font:600 11px var(--font);padding:4px 12px;border-radius:100px;white-space:nowrap}
+.sec-title{font-family:var(--font-display);font-size:18px;font-weight:600;flex:1;color:var(--txt)}
+.sec-toggle{width:28px;height:28px;border:1px solid var(--border);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--txt2);font-size:14px;transition:all .3s;flex-shrink:0}
+.sec-toggle.open{background:var(--gold-dim);border-color:var(--gold);color:var(--gold);transform:rotate(45deg)}
+.sec-body{padding:0 24px 24px;display:none}
+.sec-body.open{display:block}
+/* ── SUB SECTION ── */
+.subsec{margin-bottom:28px}
+.subsec-title{font-size:14px;font-weight:700;color:var(--cyan);margin-bottom:12px;display:flex;align-items:center;gap:8px;padding-bottom:8px;border-bottom:1px solid var(--border)}
+.subsec-title::before{content:'';width:3px;height:14px;background:var(--cyan);border-radius:2px}
+.sub2-title{font-size:13px;font-weight:600;color:var(--gold2);margin:14px 0 8px;display:flex;align-items:center;gap:6px}
+.sub2-title::before{content:'◆';font-size:8px;opacity:.6}
+/* ── TABLES ── */
+.tbl-wrap{overflow-x:auto;border-radius:var(--r-sm);margin-bottom:16px;-webkit-overflow-scrolling:touch}
+table{width:100%;border-collapse:collapse;font-size:13px;min-width:400px}
+th{background:rgba(200,169,110,0.15);color:var(--gold2);font-weight:600;padding:10px 12px;text-align:left;border-bottom:1px solid rgba(200,169,110,0.25);white-space:nowrap}
+td{padding:9px 12px;border-bottom:1px solid var(--border);color:var(--txt);vertical-align:top;line-height:1.55}
+tr:last-child td{border-bottom:none}
+tr:nth-child(even) td{background:rgba(255,255,255,0.015)}
+tr:hover td{background:rgba(200,169,110,0.04)}
+/* ── LISTS ── */
+.bullets{list-style:none;margin-bottom:12px}
+.bullets li{padding:5px 0 5px 20px;position:relative;font-size:13.5px;color:var(--txt);line-height:1.6}
+.bullets li::before{content:'›';position:absolute;left:4px;color:var(--gold);font-weight:700}
+.bullets.sub li::before{content:'·';color:var(--cyan)}
+/* ── MNEMONIC ── */
+.mnemonic{background:var(--green-dim);border:1px solid rgba(16,185,129,0.25);border-radius:var(--r-sm);padding:16px 20px;margin:12px 0;position:relative}
+.mnemonic::before{content:'✦ Mnemonic';font-size:10px;font-weight:700;letter-spacing:.1em;color:var(--green);display:block;margin-bottom:8px}
+.mnemonic p,.mnemonic pre{font-size:13px;color:#d1fae5;line-height:1.8;font-family:var(--font);white-space:pre-wrap}
+/* ── ALERT / NOTE ── */
+.alert{background:var(--red-dim);border:1px solid rgba(239,68,68,0.25);border-radius:var(--r-sm);padding:14px 18px;margin:12px 0}
+.alert::before{content:'⚠ Exam Alert';font-size:10px;font-weight:700;letter-spacing:.1em;color:var(--red);display:block;margin-bottom:6px}
+.alert p{font-size:13px;color:#fecaca}
+.note{background:var(--amber-dim);border:1px solid rgba(245,158,11,0.25);border-radius:var(--r-sm);padding:14px 18px;margin:12px 0}
+.note::before{content:'ℹ Note';font-size:10px;font-weight:700;letter-spacing:.1em;color:var(--amber);display:block;margin-bottom:6px}
+.note p{font-size:13px;color:#fef3c7}
+.highlight-box{background:var(--cyan-dim);border:1px solid rgba(56,189,248,0.2);border-radius:var(--r-sm);padding:14px 18px;margin:12px 0}
+.highlight-box p{font-size:13px;color:var(--txt)}
+.highlight-box strong{color:var(--cyan)}
+/* ── ONE-LINERS ── */
+.oneliners{display:grid;gap:4px}
+.oneliner{background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:6px;padding:10px 14px;font-size:13px;line-height:1.5;transition:all .2s}
+.oneliner:hover{background:rgba(200,169,110,0.06);border-color:rgba(200,169,110,0.2)}
+.oneliner strong{color:var(--gold)}
+/* ── VIVA Q&A ── */
+.qa-item{border:1px solid var(--border);border-radius:var(--r-sm);overflow:hidden;margin-bottom:8px}
+.qa-q{background:rgba(56,189,248,0.08);padding:12px 16px;font-size:13px;font-weight:600;color:var(--cyan);cursor:pointer;user-select:none;display:flex;align-items:flex-start;gap:8px}
+.qa-q::before{content:'Q';background:var(--cyan-dim);border:1px solid rgba(56,189,248,0.3);color:var(--cyan);font-size:10px;font-weight:700;padding:2px 7px;border-radius:4px;flex-shrink:0;margin-top:1px}
+.qa-a{background:rgba(255,255,255,0.02);padding:12px 16px;font-size:13px;color:var(--txt);display:none;border-top:1px solid var(--border)}
+.qa-a::before{content:'A  ';font-weight:700;color:var(--green)}
+.qa-item.open .qa-a{display:block}
+/* ── SPOTTERS ── */
+.spotter-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}
+.spotter-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-sm);padding:16px}
+.spotter-item{font-size:13px;font-weight:600;color:var(--txt);margin-bottom:6px}
+.spotter-points{font-size:12px;color:var(--txt2);line-height:1.6}
+/* ── SEARCH HIGHLIGHT ── */
+.search-match{background:rgba(200,169,110,0.25);border-radius:2px;color:var(--gold2)}
+.hidden-by-search{display:none!important}
+/* ── DIVIDER ── */
+.divider{border:none;border-top:1px solid var(--border);margin:32px 0}
+/* ── FOOTER ── */
+footer{background:var(--bg2);border-top:1px solid var(--border);padding:32px 24px;text-align:center;font-size:12px;color:var(--txt3);position:relative;z-index:1}
+footer strong{color:var(--gold)}
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  .nav-links{display:none}
+  .nav-logo span{display:none}
+  .hero-title{font-size:clamp(32px,10vw,60px)}
+  .tier-grid{grid-template-columns:1fr 1fr}
+  main{padding:calc(var(--nav-h)+20px) 16px 60px}
+  .sec-body{padding:0 16px 16px}
+}
+@media(max-width:600px){
+  .tier-grid{grid-template-columns:1fr}
+  .hero-stats{grid-template-columns:repeat(2,1fr)}
+  .nav-controls .btn:not(:last-child){display:none}
+  table{font-size:12px;min-width:300px}
+  th,td{padding:7px 8px}
+}
+/* ── ANIMATIONS ── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.study-section{animation:fadeUp .4s ease both}
+.study-section:nth-child(1){animation-delay:.05s}
+.study-section:nth-child(2){animation-delay:.1s}
+.study-section:nth-child(3){animation-delay:.15s}
+.study-section:nth-child(4){animation-delay:.2s}
+/* ── REVISION MODE ── */
+body.revision-mode .subsec-title,body.revision-mode .sub2-title,body.revision-mode .tier-desc,body.revision-mode .bullets li{opacity:.5}
+body.revision-mode .mnemonic,body.revision-mode .alert,body.revision-mode .oneliners .oneliner,body.revision-mode .qa-item{opacity:1!important}
+body.revision-mode .mnemonic p,body.revision-mode .alert p,body.revision-mode .oneliner{color:#fff;opacity:1}
+/* scrollbar */
+::-webkit-scrollbar{width:6px;height:6px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:rgba(200,169,110,0.3);border-radius:3px}
+::-webkit-scrollbar-thumb:hover{background:rgba(200,169,110,0.5)}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav id="nav">
+  <div class="nav-inner">
+    <div class="nav-logo">FM&T<span>Forensic Medicine & Toxicology</span></div>
+    <div class="nav-links">
+      <a href="#hero">Home</a>
+      <a href="#u1">U1·Intro</a><a href="#u2">U2·History</a><a href="#u3">U3·Death</a>
+      <a href="#u4">U4·PM Changes</a><a href="#u5">U5·Autopsy</a><a href="#u6">U6·Injuries</a>
+      <a href="#u7">U7·Asphyxia</a><a href="#u8">U8·Toxicology</a><a href="#u9">U9·OPC/AlP</a>
+      <a href="#u10">U10·Metals</a><a href="#u11">U11·Corrosives</a><a href="#u12">U12·Alcohol</a>
+      <a href="#u13">U13·NDPS</a><a href="#u14">U14·Laws</a><a href="#u15">U15·Sexual</a>
+      <a href="#u16">U16·Forensic Lab</a><a href="#u17">U17·Revision</a><a href="#u18">U18·Exam Q</a>
+    </div>
+    <div class="nav-controls">
+      <button class="btn" id="searchToggle" title="Search">⌕ Search</button>
+      <button class="btn" id="revToggle">⚡ Revision</button>
+      <button class="btn" id="collapseAll">Collapse All</button>
+    </div>
+  </div>
+</nav>
+
+<!-- SEARCH BAR -->
+<div id="search-bar">
+  <input type="text" id="search-input" placeholder="Search any topic, drug, law, sign…" autocomplete="off">
+  <span id="search-count"></span>
+  <button class="btn" onclick="clearSearch()">✕ Clear</button>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-badge">MBBS Phase II · NMC/CBME India · 2024–25</div>
+  <h1 class="hero-title">Forensic Medicine<br>&amp; Toxicology</h1>
+  <p class="hero-sub">Comprehensive high-yield notes for MBBS University Exams, AIIMS/PGI, MRCP/MRCS and Viva Voce</p>
+  <p class="hero-meta">Parikh's Textbook · Reddy &amp; Murty · BNS 2023 · BNSS 2023 · BSA 2023 · NDPS · MTP · POCSO · PCPNDT · THOTA · MHA</p>
+  <div class="hero-stats">
+    <div class="stat-card"><div class="stat-num">18</div><div class="stat-lbl">Units Covered</div></div>
+    <div class="stat-card"><div class="stat-num">100+</div><div class="stat-lbl">High-Yield Tables</div></div>
+    <div class="stat-card"><div class="stat-num">40+</div><div class="stat-lbl">Viva Q&amp;As</div></div>
+    <div class="stat-card"><div class="stat-num">60+</div><div class="stat-lbl">One-Liners</div></div>
+    <div class="stat-card"><div class="stat-num">10+</div><div class="stat-lbl">Indian Laws</div></div>
+  </div>
+  <div class="hero-btns">
+    <a href="#u1" class="btn-primary">Start Studying →</a>
+    <a href="#u17" class="btn-ghost">Quick Revision ⚡</a>
+    <a href="#u18" class="btn-ghost">Exam Questions ✎</a>
+  </div>
+
+  <p class="hero-credit">— by Prabhav —</p>
+</section>
+
+<main>
+
+<!-- RESOURCE TIERS -->
+<section id="roadmap">
+  <div class="section-header">
+    <span class="section-label">Study Roadmap</span>
+  </div>
+  <div class="tier-grid">
+    <div class="tier-card tier-gold">
+      <div class="tier-icon">⭐</div>
+      <div class="tier-name gold">Gold Standard</div>
+      <div class="tier-desc">Parikh's Textbook of Medical Jurisprudence (7th Ed.) · Reddy &amp; Murty Forensic Medicine. Primary references for all content.</div>
+    </div>
+    <div class="tier-card tier-cyan">
+      <div class="tier-icon">📚</div>
+      <div class="tier-name cyan">Core Coverage</div>
+      <div class="tier-desc">Units 3–9: PM Changes, Autopsy, Injuries, Asphyxia, OPC/AlP, Toxicology. High-probability exam topics — master these first.</div>
+    </div>
+    <div class="tier-card tier-green">
+      <div class="tier-icon">⚖️</div>
+      <div class="tier-name green">Supplementary — Laws</div>
+      <div class="tier-desc">Units 14–15: BNS 2023, MTP, POCSO, PCPNDT, THOTA, NDPS. Critical for viva and law-based questions.</div>
+    </div>
+    <div class="tier-card tier-purple">
+      <div class="tier-icon">⚡</div>
+      <div class="tier-name purple">Rapid Revision</div>
+      <div class="tier-desc">Units 17–18: One-liners, antidote table, classic signs, spotters, and viva Q&amp;A. Review 48 hours before exam.</div>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRESS TRACKER -->
+<div id="progress-panel">
+  <div class="progress-header">
+    <span class="progress-title">📊 Study Progress</span>
+    <span class="progress-pct" id="pct-display">0%</span>
+  </div>
+  <div class="progress-bar-wrap"><div class="progress-bar-fill" id="progress-fill" style="width:0%"></div></div>
+  <div class="unit-pills" id="unit-pills"></div>
+</div>
+
+<!-- ══════════════════════════════════════════════ -->
+<!--  UNIT 1 — INTRODUCTION                        -->
+<!-- ══════════════════════════════════════════════ -->
+<div class="study-section" id="u1">
+<div class="section-card">
+<div class="sec-head" onclick="toggleSec(this)">
+  <span class="unit-badge">Unit 1</span>
+  <span class="sec-title">Introduction to Forensic Medicine</span>
+  <span class="sec-toggle">+</span>
+</div>
+<div class="sec-body open">
+
+<div class="subsec">
+<div class="subsec-title">1.1 Core Definitions</div>
+<div class="tbl-wrap"><table>
+<thead><tr><th>Term</th><th>Definition</th></tr></thead>
+<tbody>
+<tr><td><strong>Forensic Medicine</strong></td><td>Application of medical sciences to legal purposes to aid administration of justice. Also called Legal Medicine or State Medicine.</td></tr>
+<tr><td><strong>Medical Jurisprudence</strong></td><td>From Latin juris (law) + prudentia (knowledge). Application of legal knowledge to medical practice. Covers doctor–patient, doctor–doctor, and doctor–State relationships.</td></tr>
+<tr><td><strong>Clinical Forensic Medicine</strong></td><td>Branch dealing with living persons — clinical and therapeutic info alongside forensic principles.</td></tr>
+<tr><td><strong>Forensic Pathology</strong></td><td>Investigation of sudden, unexpected, and/or violent deaths; determines cause of death.</td></tr>
+<tr><td><strong>Thanatology</strong></td><td>Scientific study of death and its related phenomena.</td></tr>
+<tr><td><strong>Toxicology</strong></td><td>Science dealing with poisons — their detection, actions, and antidotes.</td></tr>
+</tbody></table></div>
+</div>
+
+<div class="subsec">
+<div class="subsec-title">1.2 Branches of Forensic Medicine</div>
+<ul class="bullets">
+<li><strong>Forensic Pathology:</strong> Investigation of unnatural/sudden deaths, autopsies</li>
+<li><strong>Clinical Forensic Medicine:</strong> Examination of living persons (assault victims, sexual offences)</li>
+<li><strong>Forensic Toxicology:</strong> Chemical analysis, poison identification, drug testing</li>
+<li><strong>Forensic Odontology:</strong> Dental identification, bite-mark analysis</li>
+<li><strong>Forensic Psychiatry:</strong> Mental state examination, fitness to plead</li>
+<li><strong>Forensic Anthropology:</strong> Skeletal remains, age/sex/race determination</li>
+<li><strong>Forensic Serology/DNA:</strong> Blood grouping, DNA fingerprinting, paternity disputes</li>
+</ul>
+</div>
+
+<div class="subsec">
+<div class="subsec-title">1.3 Doctor's Legal Roles</div>
+<div class="tbl-wrap"><table>
+<thead><tr><th>Role</th><th>Implication</th></tr></thead>
+<tbody>
+<tr><td><strong>As a Witness</strong></td><td>Called to testify as an expert in court; opinion evidence permissible</td></tr>
+<tr><td><strong>As a Professional</strong></td><td>Bound by professional duties — confidentiality, duty of care, informed consent</td></tr>
+<tr><td><strong>As a State Agent</strong></td><td>Obligated to report certain conditions (notifiable diseases, medico-legal cases) to authorities</td></tr>
+</tbody></table></div>
+</div>
+
+<div class="subsec">
+<div class="subsec-title">1.4 Medico-Legal Case (MLC)</div>
+<div class="highlight-box"><p><strong>Definition:</strong> Any case in which the attending doctor, after examining a patient, considers that police/court involvement is necessary.</p></div>
+<ul class="bullets">
+<li>Road traffic accidents, assault, poisoning, burns, sexual offences, unnatural deaths</li>
+<li>A doctor who fails to report an MLC can be charged under BNS (formerly IPC)</li>
+<li>First-aid cannot be refused — treat patient first, then inform police</li>
+<li>All findings must be documented contemporaneously in the MLC register</li>
+</ul>
+<div class="alert"><p>Refusing to treat an MLC patient is a criminal offence in India. Treatment must be provided even without police intimation. Always obtain an MLC number.</p></div>
+</div>
+
+</div></div></div><!-- /u1 -->
+
+<!-- ══════════════════════════════════════════════ -->
+<!--  UNIT 2 — HISTORY                             -->
+<!-- ══════════════════════════════════════════════ -->
+<div class="study-section" id="u2">
+<div class="section-card">
+<div class="sec-head" onclick="toggleSec(this)">
+  <span class="unit-badge">Unit 2</span>
+  <span class="sec-title">History of Forensic Medicine</span>
+  <span class="sec-toggle">+</span>
+</div>
+<div class="sec-body">
+<div class="subsec">
+<div class="subsec-title">2.1 Historical Milestones</div>
+<div class="tbl-wrap"><table>
+<thead><tr><th>Year/Period</th><th>Milestone</th><th>Significance</th></tr></thead>
+<tbody>
+<tr><td>2200 BC</td><td>Code of Hammurabi, Babylon</td><td>Oldest medico-legal code — established legal responsibility for physicians</td></tr>
+<tr><td>13th century</td><td>Hsi Yuan Lu (China)</td><td>First forensic manual — described drowning, poisoning, hanging, infanticide</td></tr>
+<tr><td>44 BC</td><td>Antistius examines Julius Caesar, Rome</td><td>First medico-legal autopsy — identified 23 stab wounds; only 1 fatal</td></tr>
+<tr><td>1602</td><td>Fortunato Fedele (Italy)</td><td>Wrote first systematic forensic medicine book</td></tr>
+<tr><td>1814</td><td>Mathieu Orfila — Traité des Poisons</td><td>Father of Modern Toxicology; established systematic poison analysis</td></tr>
+<tr><td>1836</td><td>James Marsh — Marsh Test</td><td>Reliable chemical test for arsenic detection in body tissues</td></tr>
+<tr><td>1897</td><td>First Fingerprint Bureau, Kolkata, India</td><td>World's first fingerprint identification bureau</td></tr>
+<tr><td>1984</td><td>Alec Jeffreys, UK — DNA Fingerprinting</td><td>Revolutionary identification technology; first criminal use: 1986 (Colin Pitchfork case)</td></tr>
+<tr><td>1949</td><td>First Poison Control Centre</td><td>Netherlands; worldwide network now established</td></tr>
+<tr><td>1693</td><td>Dr Edward Bulkley, Chennai</td><td>First autopsy in India</td></tr>
+</tbody></table></div>
+</div>
+<div class="subsec">
+<div class="subsec-title">2.2 Indian History</div>
+<ul class="bullets">
+<li><strong>1697:</strong> East India Company established first medical services</li>
+<li><strong>1897:</strong> Kolkata — first fingerprint bureau in the world (Sir Edward Henry's system)</li>
+<li><strong>1996:</strong> DNA evidence first accepted in Indian courts</li>
+<li><strong>2024:</strong> BNS, BNSS, BSA replaced IPC, CrPC, IEA (effective 1 July 2024)</li>
+</ul>
+</div>
+</div></div></div><!-- /u2 -->
+
+<!-- ══════════════════════════════════════════════ -->
+<!--  UNIT 3 — THANATOLOGY / DEATH                 -->
+<!-- ══════════════════════════════════════════════ -->
+<div class="study-section" id="u3">
+<div class="section-card">
+<div class="sec-head" onclick="toggleSec(this)">
+  <span class="unit-badge">Unit 3</span>
+  <span class="sec-title">Thanatology — Death & Its Types</span>
+  <span class="sec-toggle">+</span>
+</div>
+<div class="sec-body">
+<div class="subsec">
+<div class="subsec-title">3.1 Types of Death</div>
+<div class="tbl-wrap"><table>
+<thead><tr><th>Type</th><th>Definition</th><th>Key Points</th></tr></thead>
+<tbody>
+<tr><td><strong>Somatic (Clinical) Death</strong></td><td>Cessation of vital functions: heartbeat, respiration, consciousness</td><td>Reversible early on (CPR, defibrillation); brain survives 4–6 min after cardiac arrest</td></tr>
+<tr><td><strong>Cellular (Molecular) Death</strong></td><td>Irreversible death of individual cells/tissues</td><td>Occurs hours after somatic death; different cells survive different durations</td></tr>
+<tr><td><strong>Brain Death</strong></td><td>Complete irreversible cessation of all brain functions including brainstem</td><td>Legally recognised under THOTA 1994; enables organ donation; 2 confirmatory tests 6h apart</td></tr>
+<tr><td><strong>Apparent Death</strong></td><td>Vital functions depressed but not absent — mimics death</td><td>Causes: profound hypothermia, drug overdose, syncope, catalepsy; danger of premature burial</td></tr>
+</tbody></table></div>
+</div>
+
+<div class="subsec">
+<div class="subsec-title">3.2 Brain Death — Criteria (India, THOTA 1994)</div>
+<div class="tbl-wrap"><table>
+<thead><tr><th>Criterion</th><th>Assessment</th></tr></thead>
+<tbody>
+<tr><td>Deep unreactive coma</td><td>Glasgow Coma Scale = 3; no response to any stimulus</td></tr>
+<tr><td>Absent brainstem reflexes</td><td>No pupillary, corneal, gag, cough, oculocephalic, oculovestibular reflexes</td></tr>
+<tr><td>Absent spontaneous breathing</td><td>Apnoea test: no respiratory effort at PaCO₂ ≥60 mmHg</td></tr>
+<tr><td>Known irreversible cause</td><td>Drug effects, metabolic causes, hypothermia must be excluded</td></tr>
+<tr><td>Confirmation interval</td><td>Two separate assessments ≥6 hours apart by two senior doctors (one a neurologist/neurosurgeon)</td></tr>
+</tbody></table></div>
+<div class="alert"><p>Brain death enables organ donation under THOTA 1994. It is the legal equivalent of death in India. Time of death = time of second assessment confirming brain death.</p></div>
+</div>
+
+<div class="subsec">
+<div class="subsec-title">3.3 Signs of Death (Certain vs Uncertain)</div>
+<div class="tbl-wrap"><table>
+<thead><tr><th>Uncertain Signs</th><th>Certain (Absolute) Signs</th></tr></thead>
+<tbody>
+<tr><td>Cessation of heartbeat/pulse</td><td>Decomposition/Putrefaction</td></tr>
+<tr><td>Cessation of breathing</td><td>Rigor mortis (in combination with other signs)</td></tr>
+<tr><td>Loss of consciousness</td><td>Livor mortis (fixed after 8–12h)</td></tr>
+<tr><td>Pallor, loss of reflexes</td><td>Decapitation / Gross mutilation</td></tr>
+</tbody></table></div>
+</div>
+
+<div class="subsec">
+<div class="subsec-title">3.4 Cause vs Manner vs Mechanism of Death</div>
+<div class="tbl-wrap"><table>
+<thead><tr><th>Concept</th><th>Definition</th><th>Example</th></tr></thead>
+<tbody>
+<tr><td><strong>Cause of Death</strong></td><td>Disease/injury responsible for death</td><td>Stab wound to aorta</td></tr>
+<tr><td><strong>Mechanism of Death</strong></td><td>Final physiological derangement</td><td>Haemorrhagic shock</td></tr>
+<tr><td><strong>Manner of Death</strong></td><td>Circumstances (NASH)</td><td>Homicide / Natural / Accident / Suicide</td></tr>
+</tbody></table></div>
+</div>
+
+<div class="subsec">
+<div class="subsec-title">3.5 Sudden Natural Death</div>
+<ul class="bullets">
+<li><strong>Definition:</strong> Unexpected death from natural disease in a person who appeared healthy within 24 hours</li>
+<li><strong>Most common cause:</strong> Ischaemic heart disease (coronary artery disease) — responsible for >50% of SDN</li>
+<li>Others: Pulmonary embolism, aortic rupture, subarachnoid haemorrhage, epilepsy, bronchial asthma</li>
+<li>Medico-legal: autopsy mandatory if circumstances are unclear; does NOT exclude foul play</li>
+</ul>
+</div>
+</div></div></div><!-- /u3 -->
+
+<!-- ══════════════════════════════════════════════ -->
+<!--  UNIT 4 — POSTMORTEM CHANGES                  -->
+<!-- ══════════════════════════════════════════════ -->
+<div class="study-section" id="u4">
+<div class="section-card">
+<div class="sec-head" onclick="toggleSec(this)">
+  <span class="unit-badge">Unit 4</span>
+  <span class="sec-title">Postmortem Changes &amp; TSD Estimation</span>
+  <span class="sec-toggle">+</span>
+</div>
+<div class="sec-body">
+
+<div class="subsec">
+<div class="subsec-title">4.1 Algor Mortis (Body Cooling)</div>
+<div class="highlight-box"><p><strong>Definition:</strong> Fall in body temperature after death until equilibrium with ambient temperature.<br>
+<strong>Rate:</strong> ~1–1.5°C per hour (first 6 hours, Indian conditions — De Saram's formula)<br>
+<strong>Standard formula:</strong> Henssge Nomogram</p></div>
+<div class="tbl-wrap"><table>
+<thead><tr><th>Factor</th><th>Effect on Cooling Rate</th></tr></thead>
+<tbody>
+<tr><td>High ambient temperature</td><td>Slower cooling</td></tr>
+<tr><td>Air movement / draught</td><td>Faster cooling</td></tr>
+<tr><td>High humidity</td><td>Slower cooling</td></tr>
+<tr><td>Clothing/bedding</td><td>Insulation → slower</td></tr>
+<tr><td>Obese body</td><td>Slower cooling</td></tr>
+<tr><td>Infants/elderly</td><td>Faster cooling</td></tr>
+<tr><td>Fever/strychnine at death</td><td>Body initially warmer</td></tr>
+</tbody></table></div>
+</div>
+
+<div class="subsec">
+<div class="subsec-title">4.2 Livor Mortis (Postmortem Staining)</div>
+<div class="highlight-box"><p><strong>Definition:</strong> Bluish-purple discolouration of dependent parts due to gravitational settling of blood in toneless capillaries.</p></div>
+<div class="tbl-wrap"><table>
+<thead><tr><th>Feature</th><th>Detail</th></tr></thead>
+<tbody>
+<tr><td>Onset</td><td>30 min – 2 hours after death</td></tr>
+<tr><td>Well established</td><td>6–8 hours</td></tr>
+<tr><td>Fixation (non-shiftable)</td><td>8–12 hours (classically 8–10 h)</td></tr>
+<tr><td>Normal colour</td><td>Bluish-purple / purplish-red</td></tr>
+<tr><td>Cherry red</td><td>Carbon monoxide (CO) poisoning</td></tr>
+<tr><td>Bright red</td><td>Cyanide poisoning; cold / hypothermia</td></tr>
+<tr><td>Brown (chocolate)</td><td>Methaemoglobinaemia</td></tr>
+<tr><td>Pink</td><td>Refrigerated body / hypothermia</td></tr>
+</tbody></table></div>
+<div class="sub2-title">PM Staining vs Ante-mortem Bruise</div>
+<div class="tbl-wrap"><table>
+<thead><tr><th>Feature</th><th>PM Staining</th><th>Ante-mortem Bruise</th></tr></thead>
+<tbody>
+<tr><td>Location</td><td>Dependent parts only</td><td>Anywhere on body</td></tr>
+<tr><td>Blanching on pressure</td><td>Early: YES; After fixation: NO</td><td>NEVER blanches</td></tr>
+<tr><td>Tissue incision</td><td>Blood in vessels only</td><td>Extravasated blood in tissues</td></tr>
+<tr><td>Swelling</td><td>Absent</td><td>Present</td></tr>
+<tr><td>Inflammatory reaction</td><td>Absent</td><td>Present</td></tr>
+</tbody></table></div>
+</div>
+
+<div class="subsec">
+<div class="subsec-title">4.3 Rigor Mortis</div>
+<div class="highlight-box"><p><strong>Definition:</strong> Stiffening of muscles due to ATP depletion → Ca²⁺ accumulation → permanent actomyosin cross-bridges (viscid actomyosin complex).</p></div>
+<div class="tbl-wrap"><table>
+<thead><tr><th>Phase</th><th>Timing</th></tr></thead>
+<tbody>
+<tr><td>Primary flaccidity</td><td>Immediately after death</td></tr>
+<tr><td>Onset of rigor</td><td>1–2 hours (range: immediate–3h)</td></tr>
+<tr><td>Complete rigor</td><td>~6–12 hours</td></tr>
+<tr><td>Passes off (secondary flaccidity)</td><td>24–48 hours</td></tr>
+</tbody></table></div>
+<div class="mnemonic"><p><strong>Nysten's Law — Order of Rigor Mortis:</strong><br>
+Heart → Eyelids → Jaw → Neck → Upper Limbs → Trunk → Lower Limbs<br>
+<em>Mnemonic: "He Eats Jam N Unchocolated Toffees Lowly"</em></p></div>
+<div class="sub2-title">Cadaveric Spasm vs Rigor Mortis</div>
+<div class="tbl-wrap"><table>
+<thead><tr><th>Feature</th><th>Cadaveric Spasm</th><th>Rigor Mortis</th></tr></thead>
+<tbody>
+<tr><td>Timing</td><td>Instantaneous at death</td><td>1–2 hours after death</td></tr>
+<tr><td>Muscles affected</td><td>Limited group (e.g., hands)</td><td>Whole body</td></tr>
+<tr><td>Antemortem significance</td><td><strong>YES — proves victim was alive</strong></td><td>No</td></tr>
+<tr><td>Medico-legal value</td><td>Reflects last voluntary act</td><td>TSD estimation</td></tr>
+<tr><td>Primary flaccidity</td><td>Absent — skips it</td><td>Follows primary flaccidity</td></tr>
+</tbody></table></div>
+<div class="note"><p>Classic examples of cadaveric spasm: Drowning victim clutching weeds/mud; suicide victim gripping pistol tightly in a death grip.</p></div>
+<div class="sub2-title">Heat Stiffening vs Cold Stiffening</div>
+<div class="tbl-wrap"><table>
+<thead><tr><th>Type</th><th>Cause</th><th>Key Feature</th></tr></thead>
+<tbody>
+<tr><td><strong>Heat Stiffening</strong></td><td>Exposure &gt;65°C — muscle protein coagulation</td><td>Pugilistic (boxer) attitude — flexors dominate. Fire/burn deaths.</td></tr>
+<tr><td><strong>Cold Stiffening</strong></td><td>Body freezing below 0°C</td><td>Simulates rigor; disappears on warming</td></tr>
+</tbody></table></div>
+</div>
+
+<div class="subsec">
+<div class="subsec-title">4.4 Putrefaction</div>
+<div class="highlight-box"><p><strong>Mechanism:</strong> Autolysis + bacterial action (mainly <em>Clostridium welchii</em>) → gas production (H₂S, CO₂, CH₄) + tissue breakdown.<br>
+<strong>First external sign: Greenish discolouration over RIGHT ILIAC FOSSA</strong> (caecum — richest in bacteria)</p></div>
+<div class="tbl-wrap"><table>
+<thead><tr><th>Stage</th><th>Description</th></tr></thead>
+<tbody>
+<tr><td>Greenish RIF</td><td>First external sign; bacteria from caecum</td></tr>
+<tr><td>Marbling</td><td>Green-black venous pattern: H₂S + Hb = sulphaemoglobin in superficial veins</td></tr>
+<tr><td>Bloating/blisters</td><td>Gas distension; skin bullae with brownish fluid</td></tr>
+<tr><td>Skin slippage</td><td>Epidermis separates; face unrecognisable</td></tr>
+<tr><td>Liquefaction</td><td>Organ breakdown; strong H₂S odour</td></tr>
+</tbody></table></div>
+<div class="tbl-wrap"><table>
+<thead><tr><th>Factor</th><th>Effect</th></tr></thead>
+<tbody>
+<tr><td>Temperature 24–32°C</td><td>Optimal; freezing arrests</td></tr>
+<tr><td>Moist environment</td><td>Accelerates</td></tr>
+<tr><td>Sepsis / oedema at death</td><td>Accelerates</td></tr>
+<tr><td>Arsenic / strychnine / CO poisoning</td><td>Delays putrefaction</td></tr>
+</tbody></table></div>
+</div>
+
+<div class="subsec">
+<div class="subsec-title">4.5 Modifications of Putrefaction</div>
+<div class="tbl-wrap"><table>
+<thead><tr><th>Type</th><th>Environment</th><th>Appearance</th><th>M-L Importance</th></tr></thead>
+<tbody>
+<tr><td><strong>Mummification</strong></td><td>HOT, DRY, free air (desert)</td><td>Dry, leathery, brown, shrivelled</td><td>Features/wounds preserved; identification possible</td></tr>
+<tr><td><strong>Adipocere</strong></td><td>WARM, MOIST, ANAEROBIC (water/damp soil)</td><td>Yellowish-white, waxy, greasy; rancid odour</td><td>Body contour preserved; TSD in submerged/buried bodies</td></tr>
+<tr><td><strong>Maceration</strong></td><td>Dead fetus in utero</td><td>Aseptic autolysis; Spalding's sign (skull overlapping); Robert's sign (gas in vessels)</td><td>Diagnoses intrauterine fetal death; timing of death</td></tr>
+</tbody></table></div>
+<div class="note"><p>Adipocere composition: Calcium and magnesium soaps of fatty acids (mainly hydroxy-stearic acid). Takes ≥3 weeks to develop; well-formed in 3–6 months.</p></div>
+</div>
+
+<div class="subsec">
+<div class="subsec-title">4.6 TSD (Time Since Death) Summary</div>
+<div class="tbl-wrap"><table>
+<thead><tr><th>PM Change</th><th>Time Frame</th><th>TSD Indicator</th></tr></thead>
+<tbody>
+<tr><td>Algor mortis</td><td>First 24 hours</td><td>~1–1.5°C/h drop; measure rectal/core temp</td></tr>
+<tr><td>Livor mortis</td><td>0.5–12 hours</td><td>Onset 0.5–2h; fixation 8–12h</td></tr>
+<tr><td>Rigor mortis</td><td>2–48 hours</td><td>Onset 1–2h; complete 12h; resolves 24–48h</td></tr>
+<tr><td>Early putrefaction</td><td>24h – several days</td><td>Greenish RIF, bloating, odour</td></tr>
+<tr><td>Advanced putrefaction</td><td>Days to weeks</td><td>Marbling, liquefaction</td></tr>
+<tr><td>Adipocere</td><td>3+ weeks</td><td>Warm moist environment</td></tr>
+<tr><td>Mummification</td><td>Weeks to months</td><td>Hot dry environment</td></tr>
+<tr><td>Skeletal remains</td><td>Months to years</td><td>Bones, teeth identification</td></tr>
+</tbody></table></div>
+</div>
+
+<div class="subsec">
+<div class="subsec-title">4.7 Forensic Entomology</div>
+<ul class="bullets">
+<li>Study of insect succession to estimate TSD. Most common fly: <em>Calliphora vicina</em> (bluebottle)</li>
+<li>Sequence: Eggs (0–1d) → Larvae/maggots (1–3d) → Full-grown maggots (5–10d) → Pupae (10–20d) → Adult flies (20–30d)</li>
+</ul>
+</div>
+</div></div></div><!-- /u4 -->
+
+<!-- ══════════════════════════════════════════════ -->
+<!--  UNIT 5 — AUTOPSY                             -->
+<!-- ══════════════════════════════════════════════ -->
+<div class="study-section" id="u5">
+<div class="section-card">
+<div class="sec-head" onclick="toggleSec(this)">
+  <span class="unit-badge">Unit 5</span>
+  <span class="sec-title">Autopsy — Types, Procedure &amp; PM Reports</span>
+  <span class="sec-toggle">+</span>
+</div>
+<div class="sec-body">
+<div class="subsec">
+<div class="subsec-title">5.1 Types of Autopsy</div>
+<div class="tbl-wrap"><table>
+<thead><tr><th>Type</th><th>Authorised By</th><th>Consent</th><th>Purpose</th></tr></thead>
+<tbody>
+<tr><td><strong>Medico-legal (Forensic)</strong></td><td>Police/Magistrate order</td><td>NOT required</td><td>Cause, manner, time of death; legal proceedings</td></tr>
+<tr><td><strong>Pathological (Hospital)</strong></td><td>Treating physician</td><td>Written consent of NOK</td><td>Confirm diagnosis; academic</td></tr>
+<tr><td><strong>Academic</strong></td><td>Anatomy faculty</td><td>Legal unclaimed body formalities</td><td>Teaching anatomy</td></tr>
+<tr><td><strong>Virtopsy (Virtual)</strong></td><td>Radiologist + forensic pathologist</td><td>Not required (forensic)</td><td>3D CT/MRI; minimally invasive; religious objections</td></tr>
+<tr><td><strong>Psychological</strong></td><td>Forensic psychiatrist</td><td>N/A (retrospective)</td><td>Reconstruct mental state before death (suicide vs accident)</td></tr>
+</tbody></table></div>
+</div>
+<div class="subsec">
+<div class="subsec-title">5.2 Legal Requirements for ML Autopsy (India)</div>
+<ul class="bullets">
+<li>Written official order from Inquest Officer — Section 174/176 BNSS 2023</li>
+<li>Body must be identified by police AND ≥2 relatives before autopsy</li>
+<li>Performed in daylight (artificial light masks jaundice, bruises)</li>
+<li>All three cavities MUST be opened — partial autopsy is legally void</li>
+<li>Report in duplicate/triplicate on same day</li>
+<li>For custodial deaths: video filming mandatory (NHRC guidelines)</li>
+</ul>
+<div class="alert"><p>A doctor issuing a death certificate for sudden death WITHOUT autopsy risks being charged as an accessory to murder if foul play is later detected.</p></div>
+</div>
+<div class="subsec">
+<div class="subsec-title">5.3 Evisceration Techniques</div>
+<div class="tbl-wrap"><table>
+<thead><tr><th>Method</th><th>Technique</th><th>Common Use</th></tr></thead>
+<tbody>
+<tr><td><strong>Virchow's Method</strong></td><td>Individual organ removal — each organ separately</td><td>Most common in India</td></tr>
+<tr><td><strong>Letulle's Method (En masse)</strong></td><td>All organs removed together as one block</td><td>When organ relationships must be preserved</td></tr>
+<tr><td><strong>Ghon's Method</strong></td><td>Organs removed in separate blocks</td><td>Common in Europe</td></tr>
+</tbody></table></div>
+</div>
+<div class="subsec">
+<div class="subsec-title">5.4 Negative Autopsy</div>
+<div class="highlight-box"><p>An autopsy where cause of death remains undetermined even after exhaustive tests. Occurs in ~2–5% of cases. Common causes: cardiac arrhythmia, drug overdose (small doses), anaphylaxis, epilepsy.</p></div>
+</div>
+</div></div></div><!-- /u5 -->
+
+<!-- ══════════════════════════════════════════════ -->
+<!--  UNIT 6 — INJURIES & WOUNDS                   -->
+<!-- ══════════════════════════════════════════════ -->
+<div class="study-section" id="u6">
+<div class="section-card">
+<div class="sec-head" onclick="toggleSec(this)">
+  <span class="unit-badge">Unit 6</span>
+  <span class="sec-title">Injuries &amp; Wound Classification</span>
+  <span class="sec-toggle">+</span>
+</div>
+<div class="sec-body">
+<div class="subsec">
+<div class="subsec-title">6.1 Classification of Injuries</div>
+<div class="tbl-wrap"><table>
+<thead><tr><th>Type</th><th>Cause</th><th>Features</th></tr></thead>
+<tbody>
+<tr><td><strong>Abrasion</strong></td><td>Friction/scraping; blunt force</td><td>Superficial; epidermis only; directionality; dries to form scab (crust); survives decomposition</td></tr>
+<tr><td><strong>Contusion (Bruise)</strong></td><td>Blunt force — vascular damage without skin breach</td><td>Blood extravasation; colour changes over time; can appear remote from impact site (e.g., periorbital bruise from skull fracture)</td></tr>
+<tr><td><strong>Laceration</strong></td><td>Blunt force tearing tissue</td><td>Irregular, ragged edges; tissue bridges across wound; surrounding bruising</td></tr>
+<tr><td><strong>Incised wound</strong></td><td>Sharp-edged weapon cutting</td><td>Clean, well-defined edges; no tissue bridges; deeper than wide; greater length than depth</td></tr>
+<tr><td><strong>Stab wound</strong></td><td>Sharp-pointed weapon thrusting</td><td>Greater depth than surface dimensions; track can involve vital structures; explore depth carefully</td></tr>
+<tr><td><strong>Firearm wound</strong></td><td>Bullet/projectile</td><td>Entry vs exit; range of fire; tattooing; soot; gas effects</td></tr>
+</tbody></table></div>
+</div>
+<div class="subsec">
+<div class="subsec-title">6.2 Bruise Colour Changes (Age Estimation)</div>
+<div class="tbl-wrap"><table>
+<thead><tr><th>Colour</th><th>Approximate Age</th><th>Mechanism</th></tr></thead>
+<tbody>
+<tr><td>Red/Blue-red</td><td>Recent (hours)</td><td>Oxyhaemoglobin / haematoma</td></tr>
+<tr><td>Bluish-purple</td><td>1–3 days</td><td>Deoxygenation of Hb</td></tr>
+<tr><td>Green</td><td>4–7 days</td><td>Haemoglobin → biliverdin</td></tr>
+<tr><td>Yellow</td><td>7–14 days</td><td>Biliverdin → bilirubin</td></tr>
+<tr><td>Normal skin colour</td><td>2–4 weeks</td><td>Complete reabsorption</td></tr>
+</tbody></table></div>
+<div class="alert"><p>Bruise age estimation by colour is unreliable — significant interindividual variation. Courts should be cautioned against precise dating based on colour alone.</p></div>
+</div>
+<div class="subsec">
+<div class="subsec-title">6.3 Grievous Hurt — 8 Kinds (BNS Sec 116 / IPC 320)</div>
+<ul class="bullets">
+<li>Emasculation</li>
+<li>Permanent privation of sight of either eye</li>
+<li>Permanent privation of hearing of either ear</li>
+<li>Privation of any member or joint</li>
+<li>Destruction or permanent impairing of powers of any member or joint</li>
+<li>Permanent disfiguration of the head or face</li>
+<li>Fracture or dislocation of a bone or tooth</li>
+<li>Any hurt which endangers life or causes severe bodily pain for 20+ days</li>
+</ul>
+</div>
+<div class="subsec">
+<div class="subsec-title">6.4 Firearm Injuries</div>
+<div class="tbl-wrap"><table>
+<thead><tr><th>Range</th><th>Entry Wound Features</th></tr></thead>
+<tbody>
+<tr><td>Contact (0 cm)</td><td>Stellate laceration; burning; blackening; gas blast injury</td></tr>
+<tr><td>Close (up to 15 cm)</td><td>Blackening (soot), burning; round wound</td></tr>
+<tr><td>Intermediate (15–60 cm)</td><td>Tattooing (unburnt powder grains embedded in skin); no soot</td></tr>
+<tr><td>Distant (&gt;60 cm)</td><td>Clean punched-out wound; inverted edges; abrasion collar</td></tr>
+</tbody></table></div>
+<ul class="bullets">
+<li><strong>Exit wound:</strong> Larger, irregular, everted edges; no abrasion collar</li>
+<li><strong>Abrasion collar:</strong> Ring of abrasion around entry wound (bullet spinning)</li>
+<li><strong>Wipe collar:</strong> Grease, soot on bullet transferred to wound margin</li>
+</ul>
+</div>
+</div></div></div><!-- /u6 -->
+
+<!-- ══════════════════════════════════════════════ -->
+<!--  UNIT 7 — MECHANICAL ASPHYXIA                 -->
+<!-- ══════════════════════════════════════════════ -->
+<div class="study-section" id="u7">
+<div class="section-card">
+<div class="sec-head" onclick="toggleSec(this)">
+  <span class="unit-badge">Unit 7</span>
+  <span class="sec-title">Mechanical Asphyxia</span>
+  <span class="sec-toggle">+</span>
+</div>
+<div class="sec-body">
+<div class="subsec">
+<div class="subsec-title">7.1 Definition &amp; General Signs of Asphyxia</div>
+<div class="highlight-box"><p><strong>Asphyxia:</strong> Condition resulting from interference with respiration, causing excess CO₂ and lack of O₂ in the blood.</p></div>
+<ul class="bullets">
+<li><strong>Tardieu spots:</strong> Petechial haemorrhages on pleura, pericardium, conjunctivae — classic sign of asphyxia</li>
+<li>Cyanosis of lips, nails, skin</li>
+<li>Congestion and oedema of lungs</li>
+<li>Engorgement of right heart</li>
+<li>Facial congestion/oedema (especially hanging, strangulation)</li>
+</ul>
+</div>
+<div class="subsec">
+<div class="subsec-title">7.2 Hanging</div>
+<div class="tbl-wrap"><table>
+<thead><tr><th>Feature</th><th>Hanging</th><th>Strangulation (Ligature)</th></tr></thead>
+<tbody>
+<tr><td>Manner (usually)</td><td>Suicide (90%)</td><td>Homicide (usually)</td></tr>
+<tr><td>Ligature mark position</td><td>Above thyroid cartilage, oblique, non-continuous</td><td>Below thyroid cartilage, horizontal, continuous</td></tr>
+<tr><td>Ligature mark depth</td><td>Deep groove (parchmentised)</td><td>Less deep unless sustained</td></tr>
+<tr><td>Congestion of face</td><td>Less (body weight empties veins)</td><td>Marked facial congestion</td></tr>
+<tr><td>Tardieu spots</td><td>Below ligature; rare above</td><td>Common above ligature</td></tr>
+<tr><td>Simon's haemorrhage</td><td>Present (pathognomonic)</td><td>Absent</td></tr>
+<tr><td>Cause of death</td><td>Cerebral hypoxia, fracture-dislocation of C2-3</td><td>Cerebral hypoxia</td></tr>
+</tbody></table></div>
+<div class="note"><p><strong>Simon's haemorrhage:</strong> Haemorrhage into intervertebral discs (C3–C5) — pathognomonic of hanging.</p></div>
+</div>
+<div class="subsec">
+<div class="subsec-title">7.3 Strangulation</div>
+<div class="sub2-title">Ligature Strangulation</div>
+<ul class="bullets">
+<li>Horizontal, continuous mark at or below thyroid cartilage level</li>
+<li>Petechiae common — face, conjunctivae</li>
+<li>Hyoid and/or thyroid cartilage fracture common</li>
+<li>Usually HOMICIDE</li>
+</ul>
+<div class="sub2-title">Manual Strangulation (Throttling)</div>
+<ul class="bullets">
+<li>Always HOMICIDE — cannot be self-inflicted</li>
+<li>Crescentic bruises and fingernail abrasions around neck</li>
+<li>Hyoid bone fracture (most commonly greater cornu)</li>
+<li>Prominent Tardieu spots</li>
+<li><strong>Prinsloo-Gordon artefact:</strong> Postmortem haemorrhage in neck tissues mimicking throttling — must be excluded</li>
+</ul>
+</div>
+<div class="subsec">
+<div class="subsec-title">7.4 Drowning</div>
+<div class="tbl-wrap"><table>
+<thead><tr><th>Type</th><th>Frequency</th><th>Mechanism</th></tr></thead>
+<tbody>
+<tr><td><strong>Typical (Wet) Drowning</strong></td><td>80–90%</td><td>Water inhalation; fresh water → haemolysis/VF; sea water → haemoconcentration/pulmonary oedema</td></tr>
+<tr><td><strong>Dry Drowning</strong></td><td>10–15%</td><td>Laryngeal spasm without water entering; hypoxia from apnoea</td></tr>
+<tr><td><strong>Immersion Syndrome</strong></td><td>Rare</td><td>Vagal cardiac arrest on hitting cold water — death before drowning</td></tr>
+<tr><td><strong>Secondary Drowning</strong></td><td>Rare</td><td>Delayed pulmonary oedema after near-drowning</td></tr>
+</tbody></table></div>
+<div class="sub2-title">PM Findings in Drowning</div>
+<ul class="bullets">
+<li><strong>External:</strong> Fine lathery froth at mouth/nostrils (reforms when wiped — pathognomonic); "Washerwoman's hands"; Goose skin (cutis anserina); Cadaveric spasm of hands clutching weeds</li>
+<li><strong>Internal:</strong> <strong>Emphysema aquosum</strong> — lungs overdistended, ballooned, heavy (&gt;700g each); <strong>Paltauf's haemorrhages</strong> — pale, greyish subpleural extravasations; Diatoms in bone marrow; Water in stomach</li>
+</ul>
+<div class="sub2-title">Confirmatory Tests for Antemortem Drowning</div>
+<div class="tbl-wrap"><table>
+<thead><tr><th>Test</th><th>Principle</th></tr></thead>
+<tbody>
+<tr><td><strong>Diatom Test</strong></td><td>Diatom silica skeletons in bone marrow/kidney/liver confirms antemortem drowning — diatoms reach organs only if heart was beating</td></tr>
+<tr><td><strong>Gettler Test</strong></td><td>Chloride difference between left/right heart blood (now of historical interest)</td></tr>
+<tr><td><strong>Cadaveric Spasm</strong></td><td>Clutching weeds/mud in hands proves antemortem immersion</td></tr>
+</tbody></table></div>
+</div>
+</div></div></div><!-- /u7 -->
+
+<!-- ══════════════════════════════════════════════ -->
+<!--  UNIT 8 — FORENSIC TOXICOLOGY                 -->
+<!-- ══════════════════════════════════════════════ -->
+<div class="study-section" id="u8">
+<div class="section-card">
+<div class="sec-head" onclick="toggleSec(this)">
+  <span class="unit-badge">Unit 8</span>
+  <span class="sec-title">Forensic Toxicology — General Principles</span>
+  <span class="sec-toggle">+</span>
+</div>
+<div class="sec-body">
+<div class="subsec">
+<div class="subsec-title">8.1 Classification of Poisons</div>
+<div class="tbl-wrap"><table>
+<thead><tr><th>Category</th><th>Examples</th></tr></thead>
+<tbody>
+<tr><td><strong>Corrosives</strong></td><td>Strong acids (H₂SO₄, HCl, HNO₃), strong alkalis (NaOH, KOH)</td></tr>
+<tr><td><strong>Irritants</strong></td><td>OPC, copper sulphate, arsenic, lead</td></tr>
+<tr><td><strong>CNS Depressants</strong></td><td>Opioids, barbiturates, alcohol, benzodiazepines</td></tr>
+<tr><td><strong>CNS Stimulants</strong></td><td>Cocaine, amphetamines, strychnine</td></tr>
+<tr><td><strong>Deliriants</strong></td><td>Dhatura (belladonna), cannabis, atropine</td></tr>
+<tr><td><strong>Cardiac Poisons</strong></td><td>Aconite, digitalis, oleander</td></tr>
+<tr><td><strong>Asphyxiants</strong></td><td>CO, cyanide, methane, H₂S</td></tr>
+</tbody></table></div>
+</div>
+<div class="subsec">
+<div class="subsec-title">8.2 General Management of Poisoning (ABCDE)</div>
+<div class="tbl-wrap"><table>
+<thead><tr><th>Step</th><th>Action</th></tr></thead>
+<tbody>
+<tr><td><strong>A — Airway</strong></td><td>Secure airway; intubate if GCS &lt;8</td></tr>
+<tr><td><strong>B — Breathing</strong></td><td>O₂ supplementation; ventilation if needed</td></tr>
+<tr><td><strong>C — Circulation</strong></td><td>IV access; fluids; treat arrhythmias</td></tr>
+<tr><td><strong>D — Decontamination</strong></td><td>Gastric lavage (within 1h, NOT for corrosives/petrol); activated charcoal (except iron, lithium, alcohol); skin washing (OPC)</td></tr>
+<tr><td><strong>E — Enhanced Elimination</strong></td><td>Forced alkaline diuresis (salicylates); haemodialysis (methanol, lithium); haemoperfusion (barbiturates)</td></tr>
+<tr><td><strong>F — Antidote</strong></td><td>Specific antidote if available</td></tr>
+</tbody></table></div>
+<div class="alert"><p>Gastric lavage CONTRAINDICATED in: corrosive poisoning, petroleum/kerosene, unconscious patient (without intubation), strychnine (may precipitate convulsions).</p></div>
+</div>
+</div></div></div><!-- /u8 -->
+
+<!-- ══════════════════════════════════════════════ -->
+<!--  UNIT 9 — OPC & AlP POISONING                 -->
+<!-- ══════════════════════════════════════════════ -->
+<div class="study-section" id="u9">
+<div class="section-card">
+<div class="sec-head" onclick="toggleSec(this)">
+  <span class="unit-badge">Unit 9</span>
+  <span class="sec-title">Organophosphorus &amp; Aluminium Phosphide Poisoning</span>
+  <span class="sec-toggle">+</span>
+</div>
+<div class="sec-body">
+<div class="subsec">
+<div class="subsec-title">9.1 Organophosphorus Compound (OPC) Poisoning</div>
+<div class="tbl-wrap"><table>
+<thead><tr><th>Parameter</th><th>Details</th></tr></thead>
+<tbody>
+<tr><td>Source</td><td>Insecticides (malathion, parathion, chlorpyrifos, DDVP); nerve agents (sarin, VX)</td></tr>
+<tr><td>Mechanism</td><td><strong>Irreversible inhibition of acetylcholinesterase (AChE)</strong> → ACh accumulation → cholinergic crisis</td></tr>
+<tr><td>Fatal dose (malathion)</td><td>~60–250 mg/kg</td></tr>
+<tr><td>Fatal period</td><td>24–48 hours</td></tr>
+<tr><td>Routes</td><td>Ingestion (most common), inhalation, skin absorption</td></tr>
+</tbody></table></div>
+<div class="mnemonic"><p><strong>SLUDGE</strong> (Muscarinic features):<br>
+S — Salivation &nbsp; L — Lacrimation &nbsp; U — Urination &nbsp; D — Defaecation/Diarrhoea &nbsp; G — GI cramps &nbsp; E — Emesis<br><br>
+<strong>DUMBELS</strong> (Extended Muscarinic):<br>
+D-Defaecation · U-Urination · M-<strong>Miosis (KEY SIGN — pinpoint pupils)</strong> · B-Bradycardia/Bronchospasm/Bronchorrhoea · E-Emesis · L-Lacrimation · S-Salivation/Sweating<br><br>
+<strong>Nicotinic:</strong> Fasciculations → paralysis; tachycardia; hypertension; mydriasis<br>
+<strong>CNS:</strong> Anxiety → seizures → coma → respiratory failure</p></div>
+<div class="sub2-title">Diagnosis &amp; Treatment</div>
+<div class="tbl-wrap"><table>
+<thead><tr><th>Agent</th><th>Details</th></tr></thead>
+<tbody>
+<tr><td><strong>Atropine</strong></td><td>SPECIFIC antidote (muscarinic). 2–4 mg IV every 5–10 min until atropinisation (dry mouth, tachycardia, dilated pupils). NO dose ceiling in severe poisoning.</td></tr>
+<tr><td><strong>Pralidoxime (2-PAM)</strong></td><td>SPECIFIC (nicotinic). Reactivates AChE if given within 24–48h BEFORE ageing of OPC-AChE bond. 1–2g IV. Does not cross BBB well.</td></tr>
+<tr><td><strong>Diazepam</strong></td><td>Controls seizures; 5–10mg IV</td></tr>
+</tbody></table></div>
+<div class="alert"><p>"Atropine dries secretions; Pralidoxime reactivates enzyme. Give BOTH. Never delay atropine." Plasma/RBC cholinesterase levels markedly reduced — RBC is more reliable marker.</p></div>
+</div>
+
+<div class="subsec">
+<div class="subsec-title">9.2 Aluminium Phosphide (AlP) Poisoning</div>
+<div class="tbl-wrap"><table>
+<thead><tr><th>Parameter</th><th>Details</th></tr></thead>
+<tbody>
+<tr><td>Commercial names</td><td>QuickPhos, Celphos, Phostoxin</td></tr>
+<tr><td>Active principle</td><td><strong>Phosphine gas (PH₃)</strong> released on contact with moisture</td></tr>
+<tr><td>Fatal dose</td><td>1 tablet (3g AlP) can be fatal</td></tr>
+<tr><td>Fatal period</td><td>12–24 hours (range: hours–5 days)</td></tr>
+<tr><td>Mechanism</td><td>Phosphine inhibits cytochrome c oxidase → blocks mitochondrial oxidative phosphorylation → cellular hypoxia + refractory cardiogenic shock</td></tr>
+<tr><td>Epidemiology</td><td>Most common suicidal poison in North India (Punjab, Haryana)</td></tr>
+</tbody></table></div>
+<ul class="bullets">
+<li><strong>Characteristic sign:</strong> Garlic/decaying fish odour on breath and vomitus</li>
+<li>Refractory cardiogenic shock, severe metabolic acidosis, arrhythmias (VT/VF)</li>
+<li>Pulmonary oedema, ARDS, multi-organ failure</li>
+<li><strong>Diagnosis:</strong> Silver nitrate paper test — vomitus → black stain (silver phosphide)</li>
+</ul>
+<div class="alert"><p><strong>NO SPECIFIC ANTIDOTE.</strong> Treatment entirely supportive. Gastric lavage with KMnO₄ (1:10,000) — oxidises phosphine. DO NOT use NaHCO₃ (enhances phosphine release). Mortality &gt;50%.</p></div>
+</div>
+</div></div></div><!-- /u9 -->
+
+<!-- ══════════════════════════════════════════════ -->
+<!--  UNIT 10 — HEAVY METALS                        -->
+<!-- ══════════════════════════════════════════════ -->
+<div class="study-section" id="u10">
+<div class="section-card">
+<div class="sec-head" onclick="toggleSec(this)">
+  <span class="unit-badge">Unit 10</span>
+  <span class="sec-title">Heavy Metal Poisoning — Arsenic, Lead, Mercury</span>
+  <span class="sec-toggle">+</span>
+</div>
+<div class="sec-body">
+<div class="subsec">
+<div class="subsec-title">10.1 Arsenic Poisoning</div>
+<div class="tbl-wrap"><table>
+<thead><tr><th>Parameter</th><th>Details</th></tr></thead>
+<tbody>
+<tr><td>Form</td><td>Arsenic trioxide (white arsenic, As₂O₃); arsenical pesticides</td></tr>
+<tr><td>Fatal dose</td><td>100–200 mg</td></tr>
+<tr><td>Fatal period</td><td>1–3 days (acute); months–years (chronic)</td></tr>
+<tr><td>Mechanism</td><td>Inhibits pyruvate dehydrogenase (Krebs cycle); binds sulfhydryl groups</td></tr>
+<tr><td>Detection test</td><td><strong>Marsh Test</strong> (James Marsh, 1836) — most reliable; Reinsch test; AAS</td></tr>
+</tbody></table></div>
+<div class="sub2-title">Clinical Features</div>
+<ul class="bullets">
+<li><strong>Acute:</strong> Metallic/garlic taste; "rice-water" vomitus; severe abdominal cramps; diarrhoea; cardiovascular collapse</li>
+<li><strong>Chronic (Arsenicosis):</strong> "Rain-drop" pigmentation; Mees's lines (transverse white nail bands — 1 line = 1 episode); peripheral neuropathy (glove-stocking); alopecia; carcinogen (skin, lung, bladder)</li>
+</ul>
+<div class="alert"><p><strong>PM Finding:</strong> "Red velvety" stomach mucosa — CARDINAL PM finding. Garlic odour; delayed putrefaction (arsenic preserves body). Antidote: BAL/DMSA.</p></div>
+</div>
+
+<div class="subsec">
+<div class="subsec-title">10.2 Lead Poisoning (Plumbism)</div>
+<div class="tbl-wrap"><table>
+<thead><tr><th>Feature</th><th>Details</th></tr></thead>
+<tbody>
+<tr><td>Sources</td><td>Paints, batteries, leaded petrol, pottery, traditional kajal/surma</td></tr>
+<tr><td>Mechanism</td><td>Inhibits haem synthesis (ALA dehydratase, ferrochelatase) → hypochromic anaemia; disrupts Ca²⁺ signalling</td></tr>
+</tbody></table></div>
+<div class="sub2-title">Classic Triad of Chronic Lead Poisoning</div>
+<ul class="bullets">
+<li><strong>Anaemia:</strong> Hypochromic microcytic; <strong>basophilic stippling of RBCs</strong> (pathognomonic)</li>
+<li><strong>Burtonian (blue-black) gum line:</strong> Lead sulphide deposited at gum margin (poor oral hygiene)</li>
+<li><strong>Wrist drop:</strong> Radial nerve palsy (extensors); also foot drop — "painter's wrist"</li>
+<li>Additional: X-ray lead lines at metaphyses; Mees's lines; lead colic; encephalopathy in children</li>
+</ul>
+<div class="note"><p>Blood lead level (BLL): normal &lt;5 μg/dL; symptomatic &gt;45 μg/dL. Treatment: DMSA (oral); CaNa₂EDTA (parenteral); BAL for severe encephalopathy.</p></div>
+</div>
+
+<div class="subsec">
+<div class="subsec-title">10.3 Mercury Poisoning</div>
+<div class="tbl-wrap"><table>
+<thead><tr><th>Form</th><th>Clinical Features</th></tr></thead>
+<tbody>
+<tr><td>Inorganic HgCl₂ (corrosive sublimate)</td><td>Metallic taste; grayish-white membrane in mouth; bloody diarrhoea; anuria (renal failure); fatal dose 1–4g</td></tr>
+<tr><td>Chronic (Acrodynia/Pink Disease)</td><td>Painful red extremities; photophobia; weakness; neurotoxicity</td></tr>
+<tr><td>Organic — Minamata Disease</td><td>Methylmercury bioaccumulation in fish → paresthesias, ataxia, visual/hearing disturbance, congenital defects</td></tr>
+</tbody></table></div>
+<div class="note"><p>PM finding: Renal tubular necrosis; grayish membrane in GI tract. Treatment: BAL, DMSA, haemodialysis.</p></div>
+</div>
+
+<div class="subsec">
+<div class="subsec-title">10.4 Heavy Metal Comparison Table</div>
+<div class="tbl-wrap"><table>
+<thead><tr><th>Feature</th><th>Arsenic</th><th>Lead</th><th>Mercury (HgCl₂)</th></tr></thead>
+<tbody>
+<tr><td>Classic PM sign</td><td>Red velvety stomach; Mees's lines; rain-drop pigmentation</td><td>Burtonian line; wrist drop; basophilic stippling</td><td>Corrosive GI; grayish membrane; anuria</td></tr>
+<tr><td>Putrefaction</td><td><strong>DELAYED</strong></td><td>Normal</td><td>Normal</td></tr>
+<tr><td>Detection test</td><td>Marsh test</td><td>AAS; X-ray lead lines</td><td>AAS; Urine Hg</td></tr>
+<tr><td>Antidote</td><td>BAL/DMSA</td><td>CaNa₂EDTA/DMSA/BAL</td><td>BAL/DMSA</td></tr>
+</tbody></table></div>
+</div>
+</div></div></div><!-- /u10 -->
+
+<!-- ══════════════════════════════════════════════ -->
+<!--  UNIT 11 — CORROSIVES & IRRITANTS             -->
+<!-- ══════════════════════════════════════════════ -->
+<div class="study-section" id="u11">
+<div class="section-card">
+<div class="sec-head" onclick="toggleSec(this)">
+  <span class="unit-badge">Unit 11</span>
+  <span class="sec-title">Corrosives &amp; Irritant Poisons</span>
+  <span class="sec-toggle">+</span>
+</div>
+<div class="sec-body">
+<div class="subsec">
+<div class="subsec-title">11.1 Corrosive Acids</div>
+<div class="tbl-wrap"><table>
+<thead><tr><th>Acid</th><th>Common Name</th><th>Characteristic Signs</th><th>Treatment</th></tr></thead>
+<tbody>
+<tr><td>H₂SO₄</td><td>Oil of vitriol</td><td>Charring; brown-black crust on tissues</td><td>Dilute water; NO alkalis; morphine for pain; surgery</td></tr>
+<tr><td>HNO₃</td><td>Aqua fortis</td><td>Yellow staining (xanthoproteic reaction)</td><td>Same as H₂SO₄</td></tr>
+<tr><td>HCl</td><td>Spirit of salt</td><td>White eschar on mucosa</td><td>Same as H₂SO₄</td></tr>
+<tr><td>Oxalic acid</td><td>—</td><td>Ca²⁺ chelation → hypocalcaemia; renal oxalate crystals</td><td>IV calcium gluconate; dialysis</td></tr>
+</tbody></table></div>
+<div class="alert"><p>Gastric lavage is CONTRAINDICATED in corrosive acid/alkali poisoning — risk of re-exposure and perforation.</p></div>
+</div>
+<div class="subsec">
+<div class="subsec-title">11.2 Corrosive Alkalis</div>
+<ul class="bullets">
+<li><strong>NaOH/KOH (caustic soda/potash):</strong> Saponify fats → deep liquefactive necrosis; "soapy" texture; slippery mucosa; worse damage than acids</li>
+<li>Treatment: Dilute with water/milk; NO neutralisation; early endoscopy to assess injury</li>
+</ul>
+</div>
+<div class="subsec">
+<div class="subsec-title">11.3 Copper Sulphate (Blue Vitriol)</div>
+<div class="tbl-wrap"><table>
+<thead><tr><th>Parameter</th><th>Details</th></tr></thead>
+<tbody>
+<tr><td>Appearance</td><td>Blue crystals; blue-green vomitus (CHARACTERISTIC)</td></tr>
+<tr><td>Mechanism</td><td>Direct GI irritation; haemolysis; methaemoglobinaemia; hepatic necrosis</td></tr>
+<tr><td>Fatal dose</td><td>~30g</td></tr>
+<tr><td>PM findings</td><td>Blue-green discolouration of GI mucosa; haemolytic icterus; renal tubular necrosis</td></tr>
+<tr><td>Treatment</td><td>Egg white (precipitates Cu); penicillamine or BAL; haemodialysis</td></tr>
+</tbody></table></div>
+</div>
+<div class="subsec">
+<div class="subsec-title">11.4 Other Important Poisons</div>
+<div class="tbl-wrap"><table>
+<thead><tr><th>Poison</th><th>Key Features</th><th>Treatment</th></tr></thead>
+<tbody>
+<tr><td><strong>KMnO₄</strong></td><td>Dark purple crystals; brown/black oral staining; laryngeal oedema (may cause asphyxia). Used in AlP lavage.</td><td>Dilute water; steroids; tracheostomy if needed</td></tr>
+<tr><td><strong>Naphthalene</strong></td><td>Mothballs; haemolysis (esp. G6PD deficient); methaemoglobinaemia; dark urine; fatal dose 2–3g (children)</td><td>Methylene blue (metHb); exchange transfusion</td></tr>
+<tr><td><strong>Phenol (Carbolic Acid)</strong></td><td>Antiseptic; distinctive carbolic odour; white coagulative necrosis; dark green/black urine; CNS: stimulation then depression</td><td>PEG-400 decontamination; supportive</td></tr>
+</tbody></table></div>
+</div>
+</div></div></div><!-- /u11 -->
+
+<!-- ══════════════════════════════════════════════ -->
+<!--  UNIT 12 — ALCOHOL                            -->
+<!-- ══════════════════════════════════════════════ -->
+<div class="study-section" id="u12">
+<div class="section-card">
+<div class="sec-head" onclick="toggleSec(this)">
+  <span class="unit-badge">Unit 12</span>
+  <span class="sec-title">Alcohol (Ethanol) — Medico-Legal Aspects</span>
+  <span class="sec-toggle">+</span>
+</div>
+<div class="sec-body">
+<div class="subsec">
+<div class="subsec-title">12.1 BAC & Clinical Effects</div>
+<div class="tbl-wrap"><table>
+<thead><tr><th>BAC (mg/100 mL)</th><th>Clinical Effects</th></tr></thead>
+<tbody>
+<tr><td>10–50</td><td>Subclinical; mild relaxation</td></tr>
+<tr><td><strong>30</strong></td><td><strong>INDIAN LEGAL DRIVING LIMIT (Motor Vehicles Act)</strong></td></tr>
+<tr><td>50–100</td><td>Euphoria; impaired judgment; incoordination</td></tr>
+<tr><td>100–150</td><td>Ataxia, slurred speech, emotional lability</td></tr>
+<tr><td>150–300</td><td>Staggering, drowsiness, nausea</td></tr>
+<tr><td>300–400</td><td>Stupor, coma, hypothermia, aspiration risk</td></tr>
+<tr><td><strong>&gt;400</strong></td><td><strong>Potentially FATAL — respiratory depression</strong></td></tr>
+</tbody></table></div>
+</div>
+<div class="subsec">
+<div class="subsec-title">12.2 Widmark's Formula</div>
+<div class="highlight-box"><p><strong>Formula:</strong> A = r × W × C + β₆₀ × t<br>
+A = total alcohol consumed (g) · r = distribution factor (0.7 men, 0.6 women) · W = body weight (kg) · C = BAC (g/100mL×100) · β₆₀ = elimination rate (0.015 g/dL/h) · t = time elapsed (hours)</p></div>
+</div>
+<div class="subsec">
+<div class="subsec-title">12.3 Detection Methods</div>
+<div class="tbl-wrap"><table>
+<thead><tr><th>Method</th><th>Details</th></tr></thead>
+<tbody>
+<tr><td><strong>Breath analyser (Intoxilyzer)</strong></td><td>Indian legal limit: 150 μg/100 mL breath; roadside use</td></tr>
+<tr><td><strong>Blood alcohol level</strong></td><td>Gold standard; peripheral vein; preserved with NaF + K-oxalate</td></tr>
+<tr><td><strong>GLC (Gas-Liquid Chromatography)</strong></td><td><strong>Most reliable and accurate</strong>; distinguishes ethanol from other alcohols</td></tr>
+<tr><td><strong>Vitreous humour</strong></td><td><strong>Most stable PM specimen</strong>; resistant to postmortem redistribution; ~1.1–1.2× BAC</td></tr>
+</tbody></table></div>
+</div>
+<div class="subsec">
+<div class="subsec-title">12.4 Special Alcohols</div>
+<div class="tbl-wrap"><table>
+<thead><tr><th>Substance</th><th>Key Features</th></tr></thead>
+<tbody>
+<tr><td><strong>Methanol</strong></td><td>Fatal dose 30 mL; metabolised to formic acid/formaldehyde; triad: acidosis + blindness + coma; Rx: ethanol/fomepizole + haemodialysis + folinic acid</td></tr>
+<tr><td><strong>Isopropyl Alcohol</strong></td><td>Rubbing alcohol; metabolised to acetone; ketone odour without acidosis; CNS depression</td></tr>
+<tr><td><strong>Ethylene Glycol</strong></td><td>Antifreeze; metabolised to oxalic acid → renal failure; Ca-oxalate crystals in urine</td></tr>
+</tbody></table></div>
+</div>
+</div></div></div><!-- /u12 -->
+
+<!-- ══════════════════════════════════════════════ -->
+<!--  UNIT 13 — NDPS & DRUGS OF ABUSE              -->
+<!-- ══════════════════════════════════════════════ -->
+<div class="study-section" id="u13">
+<div class="section-card">
+<div class="sec-head" onclick="toggleSec(this)">
+  <span class="unit-badge">Unit 13</span>
+  <span class="sec-title">Narcotic &amp; Psychotropic Substances / NDPS Act</span>
+  <span class="sec-toggle">+</span>
+</div>
+<div class="sec-body">
+<div class="subsec">
+<div class="subsec-title">13.1 NDPS Act, 1985 — Key Provisions</div>
+<div class="tbl-wrap"><table>
+<thead><tr><th>Section</th><th>Subject</th></tr></thead>
+<tbody>
+<tr><td>Sec 20</td><td>Offences related to cannabis (ganja, hashish, charas)</td></tr>
+<tr><td>Sec 21</td><td>Offences related to manufactured drugs (opioids)</td></tr>
+<tr><td>Sec 27</td><td>Punishment for consumption of narcotic/psychotropic substance</td></tr>
+<tr><td>Sec 31A</td><td>Death penalty for drug trafficking by repeat offenders</td></tr>
+<tr><td>Sec 42</td><td>Power of entry, search, arrest without warrant</td></tr>
+<tr><td>Sec 50</td><td>Search of person — must be in presence of gazetted officer/Magistrate</td></tr>
+</tbody></table></div>
+<div class="tbl-wrap"><table>
+<thead><tr><th>Drug</th><th>Small Quantity</th><th>Commercial Quantity (max penalty)</th></tr></thead>
+<tbody>
+<tr><td>Heroin</td><td>250 mg</td><td>250 g</td></tr>
+<tr><td>Opium</td><td>25 g</td><td>2.5 kg</td></tr>
+<tr><td>Ganja (cannabis)</td><td>100 g</td><td>1 kg</td></tr>
+</tbody></table></div>
+</div>
+<div class="subsec">
+<div class="subsec-title">13.2 Opioid Poisoning</div>
+<div class="mnemonic"><p><strong>Classic Triad:</strong> COMA + PINPOINT PUPILS (miosis) + RESPIRATORY DEPRESSION<br>
+Drugs: Opium, morphine, heroin, codeine, pethidine, fentanyl, tramadol<br>
+PM: Needle track marks; pulmonary oedema; cerebral oedema<br>
+<strong>Antidote: NALOXONE</strong> — 0.4–2 mg IV/IM; repeat every 2–3 min</p></div>
+</div>
+<div class="subsec">
+<div class="subsec-title">13.3 Cannabis (Marijuana)</div>
+<ul class="bullets">
+<li>Source: <em>Cannabis sativa</em>; active principle: <strong>THC (Tetrahydrocannabinol)</strong></li>
+<li>Forms: Bhang (drink), Ganja (dried tops), Charas/Hashish (resin)</li>
+<li>Features: Euphoria; red eyes (conjunctival injection); tachycardia; distorted time; paranoia at high doses; <strong>run-amok syndrome</strong></li>
+<li>No established fatal dose; chronic: amotivational syndrome</li>
+</ul>
+</div>
+<div class="subsec">
+<div class="subsec-title">13.4 Other Substances</div>
+<div class="tbl-wrap"><table>
+<thead><tr><th>Substance</th><th>Key Features</th></tr></thead>
+<tbody>
+<tr><td><strong>Cocaine</strong></td><td>Blocks DA/NE/5-HT reuptake; euphoria, tachycardia, hypertension, dilated pupils; cocaine-induced MI/stroke; urine: benzoylecgonine</td></tr>
+<tr><td><strong>MDMA (Ecstasy)</strong></td><td>Serotonin syndrome; hyperthermia; hyponatraemia; fatal arrhythmia</td></tr>
+<tr><td><strong>Barbiturates</strong></td><td>GABA enhancement; overdose: coma, respiratory depression, hypothermia; alkaline diuresis</td></tr>
+<tr><td><strong>Benzodiazepines</strong></td><td>GABA enhancement; mild respiratory depression; antidote: flumazenil</td></tr>
+<tr><td><strong>LSD</strong></td><td>Hallucinogen; dilated pupils; tachycardia; no antidote; calm environment</td></tr>
+</tbody></table></div>
+</div>
+</div></div></div><!-- /u13 -->
+
+<!-- ══════════════════════════════════════════════ -->
+<!--  UNIT 14 — INDIAN MEDICO-LEGAL LAWS           -->
+<!-- ══════════════════════════════════════════════ -->
+<div class="study-section" id="u14">
+<div class="section-card">
+<div class="sec-head" onclick="toggleSec(this)">
+  <span class="unit-badge">Unit 14</span>
+  <span class="sec-title">Important Indian Medico-Legal Laws</span>
+  <span class="sec-toggle">+</span>
+</div>
+<div class="sec-body">
+<div class="note"><p>BNS 2023 (Bharatiya Nyaya Sanhita) replaces IPC 1860 · BNSS 2023 replaces CrPC 1973 · BSA 2023 replaces Indian Evidence Act 1872 — all effective 1 July 2024.</p></div>
+<div class="subsec">
+<div class="subsec-title">14.1 BNS 2023 — Key Sections for FM</div>
+<div class="tbl-wrap"><table>
+<thead><tr><th>BNS Section</th><th>IPC Equivalent</th><th>Subject</th></tr></thead>
+<tbody>
+<tr><td>Sec 106</td><td>304-A</td><td>Death by negligence — 2 years + fine</td></tr>
+<tr><td>Sec 115</td><td>319</td><td>Hurt — causing bodily pain, disease, or infirmity</td></tr>
+<tr><td>Sec 116</td><td>320</td><td>Grievous hurt — 8 kinds</td></tr>
+<tr><td>Sec 64–65</td><td>375–376</td><td>Rape — min 10 years RI; up to life; death in aggravated cases</td></tr>
+<tr><td>Sec 80</td><td>312</td><td>Criminal abortion — miscarriage without medical indication</td></tr>
+<tr><td>Sec 193</td><td>302</td><td>Murder — culpable homicide with intent</td></tr>
+<tr><td>Sec 108</td><td>306</td><td>Abetment of suicide</td></tr>
+<tr><td>Sec 45</td><td>84</td><td>Act of unsound mind — McNaghten's rules</td></tr>
+<tr><td>Sec 197</td><td>193</td><td>False certificate by doctor — up to 7 years</td></tr>
+</tbody></table></div>
+</div>
+
+<div class="subsec">
+<div class="subsec-title">14.2 MTP Act 1971 (Amendment 2021)</div>
+<div class="tbl-wrap"><table>
+<thead><tr><th>Provision</th><th>Details</th></tr></thead>
+<tbody>
+<tr><td>Single provider</td><td>Up to <strong>20 weeks</strong></td></tr>
+<tr><td>Two providers (special categories)</td><td>Up to <strong>24 weeks</strong></td></tr>
+<tr><td>Beyond 24 weeks</td><td>Medical Board approval only — severe foetal abnormality</td></tr>
+<tr><td>Special categories (24 wks)</td><td>Rape/sexual assault survivors; minors; mentally ill; detected foetal abnormality; change in marital status (widowhood/divorce)</td></tr>
+<tr><td>Consent</td><td>Woman's written consent; guardian for minors/mentally ill</td></tr>
+<tr><td>Confidentiality</td><td>Identity of woman MUST NOT be revealed — criminal offence</td></tr>
+</tbody></table></div>
+<div class="alert"><p>Key exam point: 2021 amendment raised upper limit from 20 to 24 weeks for special categories. Beyond 24 weeks ONLY if Medical Board approves for foetal abnormality.</p></div>
+</div>
+
+<div class="subsec">
+<div class="subsec-title">14.3 POCSO Act 2012 (Protection of Children from Sexual Offences)</div>
+<div class="tbl-wrap"><table>
+<thead><tr><th>Provision</th><th>Details</th></tr></thead>
+<tbody>
+<tr><td>Definition of child</td><td>Any person <strong>below 18 years</strong></td></tr>
+<tr><td>Penetrative sexual assault (Sec 3, 4)</td><td>10 years – life imprisonment + fine</td></tr>
+<tr><td>Aggravated penetrative assault (Sec 5, 6)</td><td>Min 20 years to life; death penalty (worst cases)</td></tr>
+<tr><td>Mandatory reporting</td><td>Any person receiving information MUST report to SJPU or police; failure is punishable</td></tr>
+<tr><td>Presumption of guilt (Sec 29)</td><td>Accused presumed guilty — reverse burden of proof</td></tr>
+<tr><td>Age determination</td><td>School certificate &gt; ossification tests under POCSO</td></tr>
+<tr><td>Two-finger test</td><td><strong>BANNED — Supreme Court 2013</strong></td></tr>
+</tbody></table></div>
+</div>
+
+<div class="subsec">
+<div class="subsec-title">14.4 PCPNDT Act 1994</div>
+<ul class="bullets">
+<li>Prevents sex determination of foetus and sex selection</li>
+<li><strong>Form F</strong> mandatory for every prenatal diagnostic procedure</li>
+<li>All centres must register; violations: 3–10 years imprisonment</li>
+<li>Designated Appropriate Authority at district/state level for enforcement</li>
+</ul>
+</div>
+
+<div class="subsec">
+<div class="subsec-title">14.5 THOTA 1994 (Amendment 2011)</div>
+<ul class="bullets">
+<li>Legalises brain death as death in India</li>
+<li>Enables organ retrieval from brain-dead donors</li>
+<li>Authorisation Committee for non-related living donor transplants</li>
+<li><strong>Prohibited:</strong> Commercial dealings in organs — up to 10 years imprisonment + fine</li>
+<li>Presumed consent NOT in Indian law — explicit consent required</li>
+</ul>
+</div>
+
+<div class="subsec">
+<div class="subsec-title">14.6 Mental Healthcare Act (MHA) 2017</div>
+<ul class="bullets">
+<li>Attempt to suicide: <strong>DECRIMINALISED</strong> — presumed to be under severe stress; person treated as patient, not criminal (BNS Sec 226; formerly IPC 309)</li>
+<li>Right to advance directives; right to nominate healthcare representative</li>
+<li>Insurance must cover mental illness equally with physical illness</li>
+<li>Solitary confinement, chaining, degrading treatment strictly prohibited</li>
+</ul>
+</div>
+</div></div></div><!-- /u14 -->
+
+<!-- ══════════════════════════════════════════════ -->
+<!--  UNIT 15 — SEXUAL OFFENCES                    -->
+<!-- ══════════════════════════════════════════════ -->
+<div class="study-section" id="u15">
+<div class="section-card">
+<div class="sec-head" onclick="toggleSec(this)">
+  <span class="unit-badge">Unit 15</span>
+  <span class="sec-title">Sexual Offences &amp; Medical Examination</span>
+  <span class="sec-toggle">+</span>
+</div>
+<div class="sec-body">
+<div class="subsec">
+<div class="subsec-title">15.1 Rape — Legal Definition (BNS 2023)</div>
+<ul class="bullets">
+<li>Without consent; consent obtained by force/fraud/intoxication</li>
+<li>When unable to consent (unconscious, mentally ill)</li>
+<li>Girl below 18 years — consent immaterial (statutory rape)</li>
+<li>Punishment: Minimum <strong>10 years</strong> RI; up to life; death penalty in aggravated cases</li>
+</ul>
+</div>
+<div class="subsec">
+<div class="subsec-title">15.2 Evidence Specimens in Sexual Assault</div>
+<div class="tbl-wrap"><table>
+<thead><tr><th>Specimen</th><th>Purpose/Notes</th></tr></thead>
+<tbody>
+<tr><td>Clothing</td><td>Paper bags (not plastic); each garment separately; note stains/tears</td></tr>
+<tr><td>High vaginal swab (×2)</td><td>Microscopy (spermatozoa) + DNA</td></tr>
+<tr><td>Cervical swab</td><td>Motile/non-motile spermatozoa (detectable up to 14 days)</td></tr>
+<tr><td>Anal swab</td><td>If anal penetration alleged</td></tr>
+<tr><td>Blood (5 mL)</td><td>DNA typing; blood group</td></tr>
+<tr><td>Urine</td><td>Drug screen (drug-facilitated sexual assault)</td></tr>
+<tr><td>Fingernail clippings</td><td>Foreign DNA from scratching assailant</td></tr>
+<tr><td>Pubic hair</td><td>Pulled with root for DNA</td></tr>
+</tbody></table></div>
+</div>
+<div class="subsec">
+<div class="subsec-title">15.3 Spermatozoa Detection Durations</div>
+<div class="tbl-wrap"><table>
+<thead><tr><th>Site</th><th>Motile Sperm</th><th>Non-motile Sperm</th></tr></thead>
+<tbody>
+<tr><td>Vaginal cavity</td><td>Up to 4–5 hours</td><td>Up to 5–7 days</td></tr>
+<tr><td>Cervical canal</td><td>Up to 24 hours</td><td>Up to 10–14 days</td></tr>
+<tr><td>Anal canal</td><td>Up to 6 hours</td><td>Up to 12 hours</td></tr>
+<tr><td>Mouth (oral)</td><td>Up to 2 hours</td><td>Up to 6 hours (destroyed by saliva)</td></tr>
+<tr><td>Clothing (dried)</td><td>—</td><td>DNA: months to years</td></tr>
+</tbody></table></div>
+</div>
+</div></div></div><!-- /u15 -->
+
+<!-- ══════════════════════════════════════════════ -->
+<!--  UNIT 16 — FORENSIC LAB                       -->
+<!-- ══════════════════════════════════════════════ -->
+<div class="study-section" id="u16">
+<div class="section-card">
+<div class="sec-head" onclick="toggleSec(this)">
+  <span class="unit-badge">Unit 16</span>
+  <span class="sec-title">Forensic Laboratory &amp; Recent Advances</span>
+  <span class="sec-toggle">+</span>
+</div>
+<div class="sec-body">
+<div class="subsec">
+<div class="subsec-title">16.1 DNA Fingerprinting</div>
+<ul class="bullets">
+<li>Discovered 1984, <strong>Alec Jeffreys</strong>, UK</li>
+<li>Principle: Restriction Fragment Length Polymorphism (RFLP) / PCR-based STR analysis</li>
+<li>Uses: Paternity testing, victim identification, criminal investigation, disaster victim ID</li>
+<li>Admissible under BSA 2023 (Section 79 — expert evidence)</li>
+<li>Limitations: Contamination, degradation, mixed samples, monozygotic twins</li>
+</ul>
+</div>
+<div class="subsec">
+<div class="subsec-title">16.2 Forensic Serology</div>
+<div class="tbl-wrap"><table>
+<thead><tr><th>Test</th><th>Purpose</th></tr></thead>
+<tbody>
+<tr><td><strong>Kastle-Meyer (phenolphthalein) test</strong></td><td>Presumptive test for blood</td></tr>
+<tr><td><strong>Luminol test</strong></td><td>Detect blood even after cleaning (chemiluminescence)</td></tr>
+<tr><td><strong>Precipitin test (Ouchterlony)</strong></td><td>Species identification of blood</td></tr>
+<tr><td><strong>Acid phosphatase test</strong></td><td>Presumptive test for semen</td></tr>
+<tr><td><strong>PSA (Prostate-Specific Antigen)</strong></td><td>Confirmatory test for semen; positive even if azoospermic</td></tr>
+</tbody></table></div>
+</div>
+<div class="subsec">
+<div class="subsec-title">16.3 Age Estimation Methods</div>
+<div class="tbl-wrap"><table>
+<thead><tr><th>Method</th><th>Age Range</th><th>Key Landmarks</th></tr></thead>
+<tbody>
+<tr><td>Dentition (eruption)</td><td>0–25 years</td><td>Primary (6m–2y); permanent (6–12y); wisdom (17–25y)</td></tr>
+<tr><td>Ossification of bones</td><td>0–30 years</td><td>Iliac crest fuses ~20y (women) / 22y (men); medial clavicle: last to fuse ~25–30y</td></tr>
+<tr><td>Puberty changes</td><td>9–18 years</td><td>SMR (Tanner) stages; menarche; voice change</td></tr>
+<tr><td>Skin/general appearance</td><td>All ages</td><td>Wrinkles, hair colour — rough estimate only</td></tr>
+</tbody></table></div>
+</div>
+<div class="subsec">
+<div class="subsec-title">16.4 Locard's Exchange Principle</div>
+<div class="highlight-box"><p><strong>"Every contact leaves a trace."</strong> — Edmond Locard. Basis of all trace evidence in forensic science. Fibres, hairs, pollen, paint chips, glass fragments, soil — all transfer bidirectionally between perpetrator, victim, and scene.</p></div>
+</div>
+<div class="subsec">
+<div class="subsec-title">16.5 Narco-analysis &amp; Indian Law</div>
+<ul class="bullets">
+<li>Narco-analysis, brain mapping, polygraph — admissibility contested in India</li>
+<li><strong>Selvi &amp; Others vs State of Karnataka (2010) SC:</strong> Narco-analysis/polygraph/brain mapping <em>without consent</em> = unconstitutional; violates Article 20(3) (right against self-incrimination)</li>
+<li>With voluntary consent: can be conducted, but results are not direct evidence — only leads to other evidence</li>
+</ul>
+</div>
+</div></div></div><!-- /u16 -->
+
+<!-- ══════════════════════════════════════════════ -->
+<!--  UNIT 17 — RAPID REVISION                     -->
+<!-- ══════════════════════════════════════════════ -->
+<div class="study-section" id="u17">
+<div class="section-card">
+<div class="sec-head" onclick="toggleSec(this)">
+  <span class="unit-badge">Unit 17</span>
+  <span class="sec-title">⚡ Master Rapid Revision &amp; High-Yield One-Liners</span>
+  <span class="sec-toggle">+</span>
+</div>
+<div class="sec-body">
+
+<div class="subsec">
+<div class="subsec-title">17.1 Master Antidote Table</div>
+<div class="tbl-wrap"><table>
+<thead><tr><th>Poison</th><th>Antidote / Treatment</th></tr></thead>
+<tbody>
+<tr><td><strong>Organophosphates (OPC)</strong></td><td>Atropine (muscarinic) + Pralidoxime/2-PAM (nicotinic) — give BOTH</td></tr>
+<tr><td><strong>Opioids</strong></td><td>Naloxone 0.4–2 mg IV</td></tr>
+<tr><td><strong>Benzodiazepines</strong></td><td>Flumazenil</td></tr>
+<tr><td><strong>Paracetamol</strong></td><td>N-Acetylcysteine (NAC) — within 8–10h; highest efficacy</td></tr>
+<tr><td><strong>Aluminium phosphide</strong></td><td><strong>NO ANTIDOTE</strong> — supportive only; KMnO₄ lavage</td></tr>
+<tr><td><strong>Cyanide</strong></td><td>Hydroxocobalamin (preferred); Sodium nitrite + Sodium thiosulphate</td></tr>
+<tr><td><strong>Carbon monoxide</strong></td><td>100% O₂; hyperbaric O₂ in severe cases</td></tr>
+<tr><td><strong>Arsenic / Mercury</strong></td><td>BAL (dimercaprol) / DMSA</td></tr>
+<tr><td><strong>Lead</strong></td><td>CaNa₂EDTA + BAL (severe); DMSA (oral, children)</td></tr>
+<tr><td><strong>Iron</strong></td><td>Deferoxamine</td></tr>
+<tr><td><strong>Warfarin</strong></td><td>Vitamin K (IV); FFP (emergency)</td></tr>
+<tr><td><strong>Heparin</strong></td><td>Protamine sulphate</td></tr>
+<tr><td><strong>Digoxin</strong></td><td>Digoxin-specific Fab antibody fragments</td></tr>
+<tr><td><strong>Beta-blockers</strong></td><td>Glucagon; high-dose insulin euglycaemia therapy</td></tr>
+<tr><td><strong>Copper sulphate</strong></td><td>Penicillamine / BAL</td></tr>
+<tr><td><strong>Tricyclic antidepressants</strong></td><td>Sodium bicarbonate (NaHCO₃) + supportive</td></tr>
+</tbody></table></div>
+</div>
+
+<div class="subsec">
+<div class="subsec-title">17.2 Classic Forensic Signs & Conditions</div>
+<div class="tbl-wrap"><table>
+<thead><tr><th>Sign / Finding</th><th>Condition / Significance</th></tr></thead>
+<tbody>
+<tr><td>Red velvety stomach mucosa</td><td>Arsenic poisoning</td></tr>
+<tr><td>Blue-green vomitus</td><td>Copper sulphate poisoning</td></tr>
+<tr><td>Cherry red PM staining/lividity</td><td>Carbon monoxide poisoning</td></tr>
+<tr><td>Bright red lividity + bitter almond odour</td><td>Cyanide poisoning</td></tr>
+<tr><td>Garlic odour</td><td>Arsenic OR Aluminium phosphide</td></tr>
+<tr><td>Pinpoint pupils (miosis)</td><td>Opioids; Organophosphates</td></tr>
+<tr><td>Pugilistic attitude</td><td>Heat stiffening — fire/burn deaths</td></tr>
+<tr><td>Washerwoman's hands</td><td>Prolonged immersion — drowning</td></tr>
+<tr><td>Paltauf's haemorrhages</td><td>Drowning — subpleural extravasations</td></tr>
+<tr><td>Emphysema aquosum</td><td>Drowning — overinflated waterlogged lungs</td></tr>
+<tr><td>Fine frothy lather at mouth/nose</td><td>Drowning</td></tr>
+<tr><td>Cadaveric spasm clutching weeds</td><td>Antemortem drowning</td></tr>
+<tr><td>Simon's haemorrhage (cervical disc)</td><td>Hanging — pathognomonic</td></tr>
+<tr><td>Tardieu spots (petechiae)</td><td>Asphyxia (strangulation &gt; hanging)</td></tr>
+<tr><td>Burtonian (blue-black) gum line</td><td>Chronic lead poisoning</td></tr>
+<tr><td>Mees's lines on nails</td><td>Arsenic (1 line = 1 episode); also lead</td></tr>
+<tr><td>Rain-drop pigmentation + keratosis</td><td>Chronic arsenicosis</td></tr>
+<tr><td>Basophilic stippling of RBCs</td><td>Lead poisoning — pathognomonic</td></tr>
+</tbody></table></div>
+</div>
+
+<div class="subsec">
+<div class="subsec-title">17.3 "First" Facts in Forensic Medicine</div>
+<div class="tbl-wrap"><table>
+<thead><tr><th>First</th><th>Details</th></tr></thead>
+<tbody>
+<tr><td>Oldest medico-legal code</td><td>Code of Hammurabi, c.2200 BC, Babylon</td></tr>
+<tr><td>First medico-legal autopsy</td><td>44 BC — Antistius on Julius Caesar</td></tr>
+<tr><td>Father of Modern Toxicology</td><td>Mathieu Orfila (1787–1853)</td></tr>
+<tr><td>Traité des Poisons</td><td>1814 — Orfila</td></tr>
+<tr><td>Marsh test for arsenic</td><td>1836 — James M. Marsh</td></tr>
+<tr><td>DNA fingerprinting</td><td>1984 — Alec Jeffreys, UK</td></tr>
+<tr><td>First criminal use of DNA</td><td>1986 — Colin Pitchfork case, UK</td></tr>
+<tr><td>First fingerprint bureau (world)</td><td>1897 — Kolkata, India</td></tr>
+<tr><td>DNA accepted in Indian courts</td><td>1996</td></tr>
+<tr><td>First autopsy in India</td><td>1693 — Dr Edward Bulkley, Chennai</td></tr>
+</tbody></table></div>
+</div>
+
+<div class="subsec">
+<div class="subsec-title">17.4 Important Legal Limits (India)</div>
+<div class="tbl-wrap"><table>
+<thead><tr><th>Parameter</th><th>Limit / Standard</th></tr></thead>
+<tbody>
+<tr><td>DUI — blood alcohol</td><td><strong>30 mg/100 mL blood</strong> (MVA 1988)</td></tr>
+<tr><td>DUI — breath alcohol</td><td>150 μg/100 mL breath</td></tr>
+<tr><td>Age of sexual consent (POCSO)</td><td>18 years</td></tr>
+<tr><td>MTP — single provider</td><td>Up to 20 weeks</td></tr>
+<tr><td>MTP — special categories</td><td>Up to 24 weeks</td></tr>
+<tr><td>Brain death confirmation interval</td><td>6 hours between two assessments</td></tr>
+<tr><td>Criminal responsibility (BNS)</td><td>Below 7 years — nil; 7–12 requires immature understanding</td></tr>
+<tr><td>Widmark r-factor</td><td>0.7 (men), 0.6 (women)</td></tr>
+</tbody></table></div>
+</div>
+
+<div class="subsec">
+<div class="subsec-title">17.5 High-Yield One-Liners</div>
+<div class="oneliners">
+<div class="oneliner">First external sign of putrefaction → <strong>Greenish discolouration over RIGHT ILIAC FOSSA</strong></div>
+<div class="oneliner">Livor mortis FIXED by → <strong>8–12 hours</strong> after death</div>
+<div class="oneliner">Cadaveric spasm = <strong>ANTEMORTEM</strong>; Rigor mortis = <strong>POSTMORTEM</strong></div>
+<div class="oneliner">Adipocere occurs in → <strong>WARM, MOIST, ANAEROBIC</strong> environment</div>
+<div class="oneliner">Mummification occurs in → <strong>HOT, DRY</strong> environment with free air</div>
+<div class="oneliner">Cherry red lividity → <strong>CARBON MONOXIDE</strong> poisoning</div>
+<div class="oneliner">Bright red lividity + bitter almond odour → <strong>CYANIDE</strong> poisoning</div>
+<div class="oneliner">Red velvety stomach mucosa → <strong>ARSENIC</strong> poisoning</div>
+<div class="oneliner">Blue-green vomitus → <strong>COPPER SULPHATE</strong> poisoning</div>
+<div class="oneliner">Garlic odour → <strong>ARSENIC</strong> or <strong>ALUMINIUM PHOSPHIDE</strong></div>
+<div class="oneliner">Pinpoint pupils (miosis) → <strong>OPIOIDS</strong> or <strong>ORGANOPHOSPHATES</strong></div>
+<div class="oneliner"><strong>NO ANTIDOTE</strong> → ALUMINIUM PHOSPHIDE</div>
+<div class="oneliner">Antidote for OPC → <strong>ATROPINE + PRALIDOXIME</strong></div>
+<div class="oneliner">Antidote for opioids → <strong>NALOXONE</strong></div>
+<div class="oneliner">Father of modern toxicology → <strong>MATHIEU ORFILA</strong></div>
+<div class="oneliner">Marsh test → detects <strong>ARSENIC</strong> (1836, James Marsh)</div>
+<div class="oneliner">Diatom test → proves <strong>ANTEMORTEM DROWNING</strong></div>
+<div class="oneliner">DNA fingerprinting discovered → <strong>1984, ALEC JEFFREYS</strong></div>
+<div class="oneliner">First fingerprint bureau → <strong>1897, KOLKATA</strong></div>
+<div class="oneliner">Oldest medico-legal code → <strong>CODE OF HAMMURABI, 2200 BC</strong></div>
+<div class="oneliner">First medico-legal autopsy → <strong>44 BC, ANTISTIUS on Julius Caesar</strong></div>
+<div class="oneliner">Nysten's Law → Heart → Eyelid → Jaw → Neck → Arms → Trunk → Legs</div>
+<div class="oneliner">Simon's haemorrhage → pathognomonic of <strong>HANGING</strong></div>
+<div class="oneliner">Tardieu spots → pinpoint haemorrhages; sign of <strong>ASPHYXIA</strong></div>
+<div class="oneliner">Two-finger test → <strong>BANNED in India</strong> (Supreme Court 2013)</div>
+<div class="oneliner">Legal driving limit (India) → <strong>30 mg alcohol/100 mL blood</strong></div>
+<div class="oneliner">MTP upper limit (special categories, 2021) → <strong>24 WEEKS</strong></div>
+<div class="oneliner">POCSO child definition → <strong>below 18 years</strong></div>
+<div class="oneliner">THOTA 1994 → legalises <strong>BRAINSTEM DEATH</strong> in India</div>
+<div class="oneliner">Widmark's r-factor → <strong>0.7 (men), 0.6 (women)</strong></div>
+<div class="oneliner">Most reliable PM alcohol specimen → <strong>VITREOUS HUMOUR</strong></div>
+<div class="oneliner">Most reliable method for alcohol detection → <strong>GLC (Gas-Liquid Chromatography)</strong></div>
+<div class="oneliner">Selvi case (2010) → Narco-analysis without consent = <strong>unconstitutional (Art. 20(3))</strong></div>
+<div class="oneliner">Prinsloo-Gordon artefact → PM neck haemorrhage mimicking <strong>THROTTLING</strong></div>
+<div class="oneliner">Paltauf's haemorrhages → subpleural; <strong>DROWNING</strong></div>
+<div class="oneliner">Emphysema aquosum → overinflated lungs; <strong>DROWNING</strong></div>
+<div class="oneliner">Washerwoman's hands → prolonged immersion; <strong>DROWNING</strong></div>
+<div class="oneliner">Pugilistic attitude → <strong>HEAT STIFFENING</strong> (fire deaths)</div>
+<div class="oneliner">Most common suicidal poison in North India → <strong>ALUMINIUM PHOSPHIDE</strong></div>
+<div class="oneliner">Basophilic stippling of RBCs → pathognomonic of <strong>LEAD</strong> poisoning</div>
+<div class="oneliner">Delayed putrefaction → <strong>ARSENIC</strong> poisoning (arsenic acts as preservative)</div>
+</div>
+</div>
+</div></div></div><!-- /u17 -->
+
+<!-- ══════════════════════════════════════════════ -->
+<!--  UNIT 18 — EXAM QUESTIONS & SPOTTERS          -->
+<!-- ══════════════════════════════════════════════ -->
+<div class="study-section" id="u18">
+<div class="section-card">
+<div class="sec-head" onclick="toggleSec(this)">
+  <span class="unit-badge">Unit 18</span>
+  <span class="sec-title">Viva Questions, Exam Questions &amp; Spotters</span>
+  <span class="sec-toggle">+</span>
+</div>
+<div class="sec-body">
+
+<div class="subsec">
+<div class="subsec-title">18.1 Classic High-Yield Viva Q&amp;As</div>
+<div class="qa-item"><div class="qa-q" onclick="toggleQA(this)">What is the first external sign of putrefaction?</div><div class="qa-a">Greenish discolouration over the right iliac fossa (caecum area) — richest bacterial source in the gut.</div></div>
+<div class="qa-item"><div class="qa-q" onclick="toggleQA(this)">Why is cadaveric spasm medico-legally important?</div><div class="qa-a">It is antemortem — proves the victim was alive at that moment; reflects last voluntary act (e.g., clutching weeds = drowning; gripping pistol = suicide). Unlike rigor mortis, it cannot be artificially produced after death.</div></div>
+<div class="qa-item"><div class="qa-q" onclick="toggleQA(this)">Difference between livor mortis and bruise?</div><div class="qa-a">Lividity: dependent parts only; early blanching; no tissue infiltration on incision; no swelling. Bruise: any site; never blanches; tissue infiltration on incision; swelling and inflammatory reaction present.</div></div>
+<div class="qa-item"><div class="qa-q" onclick="toggleQA(this)">What is the antidote for OPC poisoning?</div><div class="qa-a">Atropine (for muscarinic symptoms — no dose ceiling in severe poisoning) + Pralidoxime/2-PAM (for nicotinic symptoms — must give within 24–48h before "ageing" of OPC-AChE bond). Always give BOTH together.</div></div>
+<div class="qa-item"><div class="qa-q" onclick="toggleQA(this)">Why is AlP poisoning so dangerous?</div><div class="qa-a">No specific antidote; phosphine causes refractory cardiogenic shock via mitochondrial cytochrome c oxidase inhibition; mortality &gt;50%; rapidly fatal within hours to 1–2 days. Most common suicidal poison in North India.</div></div>
+<div class="qa-item"><div class="qa-q" onclick="toggleQA(this)">Which is the most reliable PM specimen for alcohol analysis?</div><div class="qa-a">Vitreous humour — least affected by postmortem redistribution and bacterial production of alcohol during putrefaction.</div></div>
+<div class="qa-item"><div class="qa-q" onclick="toggleQA(this)">What is Nysten's Law?</div><div class="qa-a">Order of onset of rigor mortis: Heart → Eyelids → Jaw → Neck → Upper limbs → Trunk → Lower limbs. (Reverse order of passing off)</div></div>
+<div class="qa-item"><div class="qa-q" onclick="toggleQA(this)">Name the confirmatory tests for antemortem drowning.</div><div class="qa-a">1. Diatom test (diatom silica in bone marrow/kidney — gold standard). 2. Cadaveric spasm of hands clutching weeds. 3. Gettler test (chloride difference between heart chambers — historical). 4. Paltauf's haemorrhages (subpleural).</div></div>
+<div class="qa-item"><div class="qa-q" onclick="toggleQA(this)">Define brain death in the Indian legal context.</div><div class="qa-a">Complete irreversible cessation of all brain functions including brainstem; legally defined under THOTA 1994; requires two independent assessments ≥6h apart by two senior doctors (one neurologist/neurosurgeon). Enables organ donation.</div></div>
+<div class="qa-item"><div class="qa-q" onclick="toggleQA(this)">What is Locard's Exchange Principle?</div><div class="qa-a">"Every contact leaves a trace." (Edmond Locard) — basis of all trace evidence collection in forensic science. Bidirectional transfer of fibres, hair, pollen, glass, soil between perpetrator, victim, and scene.</div></div>
+<div class="qa-item"><div class="qa-q" onclick="toggleQA(this)">What is the PCPNDT Act?</div><div class="qa-a">Pre-Conception and Pre-Natal Diagnostic Techniques Act, 1994. Prevents sex determination of foetus and sex selection. Form F mandatory for every procedure. 3–10 years imprisonment for violation. All centres must register with Appropriate Authority.</div></div>
+<div class="qa-item"><div class="qa-q" onclick="toggleQA(this)">What is Prinsloo-Gordon artefact?</div><div class="qa-a">Postmortem haemorrhage into neck tissues that can be mistaken for throttling — arises from gravitational hypostasis of blood into loose neck tissues after death. Must be excluded before concluding manual strangulation in PM examination.</div></div>
+<div class="qa-item"><div class="qa-q" onclick="toggleQA(this)">What is a "negative autopsy"?</div><div class="qa-a">An autopsy where the cause of death remains undetermined even after exhaustive post-mortem examination and toxicology. Occurs in ~2–5% of cases. Common causes: cardiac arrhythmia, drug overdose (small doses), anaphylaxis, epilepsy.</div></div>
+<div class="qa-item"><div class="qa-q" onclick="toggleQA(this)">Under which law is DNA evidence admissible in India?</div><div class="qa-a">Bharatiya Sakshya Adhiniyam (BSA) 2023 — replaced Indian Evidence Act 1872. Section 79 covers expert evidence including DNA profiling. DNA was first accepted in Indian courts in 1996.</div></div>
+<div class="qa-item"><div class="qa-q" onclick="toggleQA(this)">What is the Widmark formula and what is it used for?</div><div class="qa-a">Used to back-calculate blood alcohol concentration: A = r × W × C + β₆₀ × t. r = 0.7 (men)/0.6 (women); W = weight (kg); C = BAC (g/100mL×100); β₆₀ = 0.015 g/dL/h elimination rate; t = time elapsed. Used in DUI investigations to determine BAC at earlier time.</div></div>
+</div>
+
+<div class="subsec">
+<div class="subsec-title">18.2 Long Questions (10 marks)</div>
+<ul class="bullets">
+<li>Describe in detail the postmortem changes in the body. How are they used to estimate time since death?</li>
+<li>Classify drowning. Describe the postmortem findings in typical drowning. What are the confirmatory tests for antemortem drowning?</li>
+<li>Describe the medico-legal examination of a victim of alleged sexual assault. What specimens should be collected?</li>
+<li>Enumerate the causes of sudden natural death. What are the medico-legal implications of sudden death?</li>
+<li>Describe organophosphorus poisoning in detail: mechanism, clinical features, diagnosis, and management.</li>
+<li>Write in detail about brain death: definition, diagnosis, and its medico-legal significance in India (THOTA 1994).</li>
+<li>Describe the procedure of a medico-legal autopsy. What are its objectives? How is the postmortem report prepared?</li>
+</ul>
+</div>
+
+<div class="subsec">
+<div class="subsec-title">18.3 Short Notes (5 marks)</div>
+<ul class="bullets">
+<li>Rigor mortis — mechanism, timeline, Nysten's Law, medico-legal importance</li>
+<li>Cadaveric spasm — definition, mechanism, differences from rigor mortis</li>
+<li>Livor mortis — time course, fixation, colour changes, medico-legal importance</li>
+<li>Adipocere — definition, conditions, composition, medico-legal importance</li>
+<li>Marsh test — principle, procedure, result</li>
+<li>Widmark's formula — parameters, application</li>
+<li>MTP Act 1971 (Amendment 2021) — indications, upper limits, consent</li>
+<li>POCSO Act 2012 — definition, key provisions, mandatory reporting</li>
+<li>Aluminium phosphide poisoning — mechanism, clinical features, treatment</li>
+<li>Diatom test — principle, significance</li>
+<li>Hanging vs strangulation — differentiation table</li>
+<li>Tardieu spots — definition, significance</li>
+<li>Medical Certificate of Cause of Death (WHO format)</li>
+<li>Narco-analysis and Indian law (Selvi vs Karnataka, 2010)</li>
+<li>DNA fingerprinting — principle, medico-legal uses, limitations</li>
+</ul>
+</div>
+
+<div class="subsec">
+<div class="subsec-title">18.4 Exam Spotters</div>
+<div class="spotter-grid">
+<div class="spotter-card"><div class="spotter-item">Aluminium phosphide tablets (QuickPhos)</div><div class="spotter-points">Phosphine gas; garlic odour; "no antidote"; KMnO₄ lavage; refractory shock</div></div>
+<div class="spotter-card"><div class="spotter-item">Organophosphate insecticide bottle</div><div class="spotter-points">SLUDGE symptoms; AChE inhibition; atropine + 2-PAM; miosis</div></div>
+<div class="spotter-card"><div class="spotter-item">PM staining photograph</div><div class="spotter-points">Time, fixation (8–12h), colour significance, difference from bruise</div></div>
+<div class="spotter-card"><div class="spotter-item">Stiff body (rigor mortis)</div><div class="spotter-points">Mechanism (ATP depletion); Nysten's law; cold stiffening vs heat stiffening</div></div>
+<div class="spotter-card"><div class="spotter-item">Clenched hand/weapon (cadaveric spasm)</div><div class="spotter-points">Antemortem phenomenon; last voluntary act; violent death; clutching weapon = suicide</div></div>
+<div class="spotter-card"><div class="spotter-item">Waxy decomposed remains (adipocere)</div><div class="spotter-points">Environment (warm/moist/anaerobic); composition (hydroxy-stearic acid); identification</div></div>
+<div class="spotter-card"><div class="spotter-item">Maggots on body</div><div class="spotter-points">Forensic entomology; TSD; Calliphora vicina; lifecycle sequence</div></div>
+<div class="spotter-card"><div class="spotter-item">Marbling pattern on skin</div><div class="spotter-points">H₂S + Hb → sulphaemoglobin in superficial veins; advanced putrefaction</div></div>
+<div class="spotter-card"><div class="spotter-item">Blue vitriol (CuSO₄ crystals)</div><div class="spotter-points">Blue-green vomitus; haemolysis; treatment: egg white + penicillamine</div></div>
+<div class="spotter-card"><div class="spotter-item">White powder (arsenic trioxide)</div><div class="spotter-points">Red velvety stomach; Marsh test; delayed putrefaction; Mees's lines</div></div>
+<div class="spotter-card"><div class="spotter-item">Lead compounds</div><div class="spotter-points">Burtonian line; basophilic stippling; wrist drop; lead lines on X-ray</div></div>
+<div class="spotter-card"><div class="spotter-item">Neck ligature mark (hanging)</div><div class="spotter-points">Oblique, non-continuous, above thyroid cartilage; Simon's haemorrhage</div></div>
+<div class="spotter-card"><div class="spotter-item">Horizontal neck mark (strangulation)</div><div class="spotter-points">Continuous, below thyroid cartilage; usually homicide; Tardieu spots above</div></div>
+<div class="spotter-card"><div class="spotter-item">Fine frothy fluid from mouth</div><div class="spotter-points">Drowning — emphysema aquosum; Paltauf's haemorrhages; cadaveric spasm in hands</div></div>
+<div class="spotter-card"><div class="spotter-item">KMnO₄ (purple crystals)</div><div class="spotter-points">Strong oxidising agent; brown/black staining; used in AlP poisoning lavage; laryngeal oedema risk</div></div>
+</div>
+</div>
+
+</div></div></div><!-- /u18 -->
+
+<hr class="divider">
+
+</main>
+
+<footer>
+  <strong>FM&T Premium Notes</strong> — Based on Parikh's Textbook, Reddy &amp; Murty | NMC/CBME India<br>
+  <span style="margin-top:8px;display:block">BNS 2023 · BNSS 2023 · BSA 2023 · NDPS Act · MTP Act (2021 Amendment) · POCSO 2012 · PCPNDT 1994 · THOTA 1994 · MHA 2017</span>
+  <span style="margin-top:6px;display:block;font-size:11px">For educational purposes only. Always verify with current syllabus and primary references before exams.</span>
+</footer>
+
+<script>
+// ── COLLAPSE / EXPAND ──
+function toggleSec(head) {
+  const body = head.nextElementSibling;
+  const tog = head.querySelector('.sec-toggle');
+  const isOpen = body.classList.contains('open');
+  body.classList.toggle('open', !isOpen);
+  tog.classList.toggle('open', !isOpen);
+}
+document.getElementById('collapseAll').addEventListener('click', function() {
+  const bodies = document.querySelectorAll('.sec-body');
+  const toggles = document.querySelectorAll('.sec-toggle');
+  const anyOpen = [...bodies].some(b => b.classList.contains('open'));
+  bodies.forEach(b => b.classList.toggle('open', !anyOpen));
+  toggles.forEach(t => t.classList.toggle('open', !anyOpen));
+  this.textContent = anyOpen ? 'Expand All' : 'Collapse All';
+});
+
+// ── REVISION MODE ──
+document.getElementById('revToggle').addEventListener('click', function() {
+  document.body.classList.toggle('revision-mode');
+  this.classList.toggle('active');
+  this.textContent = document.body.classList.contains('revision-mode') ? '✓ Revision ON' : '⚡ Revision';
+});
+
+// ── SEARCH ──
+document.getElementById('searchToggle').addEventListener('click', function() {
+  const bar = document.getElementById('search-bar');
+  bar.classList.toggle('open');
+  this.classList.toggle('active');
+  if (bar.classList.contains('open')) document.getElementById('search-input').focus();
+  else { clearSearch(); }
+});
+document.getElementById('search-input').addEventListener('input', function() {
+  doSearch(this.value.trim());
+});
+
+function doSearch(q) {
+  const sections = document.querySelectorAll('.study-section');
+  const countEl = document.getElementById('search-count');
+  if (!q) { clearSearch(); return; }
+  const re = new RegExp(q.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi');
+  let matchCount = 0;
+  sections.forEach(sec => {
+    const text = sec.textContent;
+    if (re.test(text)) {
+      sec.classList.remove('hidden-by-search');
+      const body = sec.querySelector('.sec-body');
+      const tog = sec.querySelector('.sec-toggle');
+      if (body && !body.classList.contains('open')) {
+        body.classList.add('open');
+        if (tog) tog.classList.add('open');
+      }
+      matchCount++;
+    } else {
+      sec.classList.add('hidden-by-search');
+    }
+  });
+  countEl.textContent = matchCount + ' unit(s) matched';
+}
+
+function clearSearch() {
+  document.getElementById('search-input').value = '';
+  document.getElementById('search-count').textContent = '';
+  document.querySelectorAll('.study-section').forEach(s => s.classList.remove('hidden-by-search'));
+}
+
+// ── PROGRESS TRACKER ──
+const unitIds = ['u1','u2','u3','u4','u5','u6','u7','u8','u9','u10','u11','u12','u13','u14','u15','u16','u17','u18'];
+const unitNames = ['Intro','History','Death','PM Changes','Autopsy','Injuries','Asphyxia','Toxicology','OPC/AlP','Metals','Corrosives','Alcohol','NDPS','Laws','Sexual','Forensic Lab','Revision','Exam Q'];
+const done = new Set();
+
+const pillsContainer = document.getElementById('unit-pills');
+unitIds.forEach((id, i) => {
+  const pill = document.createElement('span');
+  pill.className = 'unit-pill';
+  pill.textContent = 'U' + (i+1) + ' · ' + unitNames[i];
+  pill.dataset.unit = id;
+  pill.addEventListener('click', function() {
+    if (done.has(id)) { done.delete(id); pill.classList.remove('done'); }
+    else { done.add(id); pill.classList.add('done'); }
+    updateProgress();
+  });
+  pillsContainer.appendChild(pill);
+});
+
+function updateProgress() {
+  const pct = Math.round((done.size / unitIds.length) * 100);
+  document.getElementById('pct-display').textContent = pct + '%';
+  document.getElementById('progress-fill').style.width = pct + '%';
+}
+
+// ── VIVA Q&A TOGGLE ──
+function toggleQA(qEl) {
+  qEl.parentElement.classList.toggle('open');
+}
+
+// ── NAV ACTIVE ──
+const navLinks = document.querySelectorAll('.nav-links a');
+const sections = document.querySelectorAll('.study-section[id]');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      const id = e.target.id;
+      navLinks.forEach(a => {
+        a.classList.toggle('active', a.getAttribute('href') === '#' + id);
+      });
+    }
+  });
+}, { rootMargin: '-40% 0px -55% 0px' });
+sections.forEach(s => observer.observe(s));
+
+// ── KEYBOARD SHORTCUT ──
+document.addEventListener('keydown', function(e) {
+  if ((e.ctrlKey || e.metaKey) && e.key === 'f') {
+    e.preventDefault();
+    const bar = document.getElementById('search-bar');
+    if (!bar.classList.contains('open')) {
+      bar.classList.add('open');
+      document.getElementById('searchToggle').classList.add('active');
+    }
+    document.getElementById('search-input').focus();
+  }
+  if (e.key === 'Escape') {
+    clearSearch();
+    document.getElementById('search-bar').classList.remove('open');
+    document.getElementById('searchToggle').classList.remove('active');
+  }
+});
+</script>
+</body>
+</html>
